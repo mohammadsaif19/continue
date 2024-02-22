@@ -135,17 +135,17 @@ const commandsMap: { [command: string]: (...args: any) => any } = {
       vscode.commands.executeCommand("continue.continueGUIView.focus");
     }
   },
-  "continue.focusContinueInput": async () => {
+  "continue.focusFazzaPilotInput": async () => {
     vscode.commands.executeCommand("continue.continueGUIView.focus");
     debugPanelWebview?.postMessage({
-      type: "focusContinueInput",
+      type: "focusFazzaPilotInput",
     });
     addHighlightedCodeToContext(false);
   },
-  "continue.focusContinueInputWithoutClear": async () => {
+  "continue.focusFazzaPilotInputWithoutClear": async () => {
     vscode.commands.executeCommand("continue.continueGUIView.focus");
     debugPanelWebview?.postMessage({
-      type: "focusContinueInputWithoutClear",
+      type: "focusFazzaPilotInputWithoutClear",
     });
     addHighlightedCodeToContext(true);
   },
@@ -159,7 +159,7 @@ const commandsMap: { [command: string]: (...args: any) => any } = {
       placeHolder: selectionEmpty
         ? "Describe the code you want to generate (or press enter to add context first)"
         : "Describe how to edit the highlighted code (or press enter to add context first)",
-      title: "Continue Quick Edit",
+      title: "FazzaPilot Quick Edit",
     });
 
     if (text === undefined) {
@@ -198,7 +198,7 @@ const commandsMap: { [command: string]: (...args: any) => any } = {
         placeHolder: selectionEmpty
           ? "Describe the code you want to generate (or press enter to add context first)"
           : "Describe how to edit the highlighted code (or press enter to add context first)",
-        title: "Continue Quick Edit",
+        title: "FazzaPilot Quick Edit",
       });
       if (text) {
         const llm = await llmFromTitle();
@@ -337,14 +337,14 @@ const commandsMap: { [command: string]: (...args: any) => any } = {
       (tabGroup) => tabGroup.tabs
     );
 
-    const fullScreenTab = tabs.find(
-      (tab) => (tab.input as any).viewType?.endsWith("continue.continueGUIView")
+    const fullScreenTab = tabs.find((tab) =>
+      (tab.input as any).viewType?.endsWith("continue.continueGUIView")
     );
 
-    // Check if the active editor is the Continue GUI View
+    // Check if the active editor is the FazzaPilot GUI View
     if (fullScreenTab && fullScreenTab.isActive) {
       vscode.commands.executeCommand("workbench.action.closeActiveEditor");
-      vscode.commands.executeCommand("continue.focusContinueInput");
+      vscode.commands.executeCommand("continue.focusFazzaPilotInput");
       return;
     }
 
@@ -370,7 +370,7 @@ const commandsMap: { [command: string]: (...args: any) => any } = {
     // vscode.commands.executeCommand("workbench.action.toggleZenMode");
     const panel = vscode.window.createWebviewPanel(
       "continue.continueGUIView",
-      "Continue",
+      "FazzaPilot",
       vscode.ViewColumn.One
     );
     panel.webview.html = getSidebarContent(

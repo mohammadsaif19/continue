@@ -1,24 +1,24 @@
 ---
-title: 🧑‍🎓 How to use Continue
-description: Using LLMs as you code with Continue
+title: 🧑‍🎓 How to use FazzaPilot
+description: Using LLMs as you code with FazzaPilot
 keywords: [how to, edit, refactor, boilerplate, context]
 ---
 
-# 🧑‍🎓 How to use Continue
+# 🧑‍🎓 How to use FazzaPilot
 
 :::info
-**TL;DR: Using LLMs as you code can accelerate you if you leverage them in the right situations. However, they can also cause you to get lost and confused if you trust them when you should not. This page outlines when and where we think you should and should not use Continue.**
+**TL;DR: Using LLMs as you code can accelerate you if you leverage them in the right situations. However, they can also cause you to get lost and confused if you trust them when you should not. This page outlines when and where we think you should and should not use FazzaPilot.**
 :::
 
 ## Introduction
 
-Continue will only be as helpful as the LLM you are using to power the edits and explanations. LLMs sometimes hallucinate, so it might make up a library or invent some syntax that does not exist. If something suggested is not working or seems odd to you, it’s best to double check with a Google search to make sure you are not falling into a rabbit hole.
+FazzaPilot will only be as helpful as the LLM you are using to power the edits and explanations. LLMs sometimes hallucinate, so it might make up a library or invent some syntax that does not exist. If something suggested is not working or seems odd to you, it’s best to double check with a Google search to make sure you are not falling into a rabbit hole.
 
-As you use Continue more, you will learn when to trust it. A great way to get started is to just play with it and start to get a sense of what works and what does not. Continue always ask you to accept / reject any changes it suggests, so you can always undo if something goes wrong.
+As you use FazzaPilot more, you will learn when to trust it. A great way to get started is to just play with it and start to get a sense of what works and what does not. FazzaPilot always ask you to accept / reject any changes it suggests, so you can always undo if something goes wrong.
 
-If you are trying to use it for a new task and don’t have a sense of how much Continue can help you complete it, it can often be helpful to start like this:
+If you are trying to use it for a new task and don’t have a sense of how much FazzaPilot can help you complete it, it can often be helpful to start like this:
 
-'Highlight' refers to the act of selecting a text range in a file and pressing 'cmd+shift+M' (Macos) or 'ctrl+shift+M' (Windows) to include it in the Continue chat message.
+'Highlight' refers to the act of selecting a text range in a file and pressing 'cmd+shift+M' (Macos) or 'ctrl+shift+M' (Windows) to include it in the FazzaPilot chat message.
 
 1. Highlight the code section(s) that you don’t understand and type "tell me how this code works" in the input box
 2. If the explanation seems reasonable, then, while still highlighting the code section(s), type "how would you change this code to [INSERT TASK]?"
@@ -27,15 +27,15 @@ If you are trying to use it for a new task and don’t have a sense of how much 
 5. If it is not giving you what you want after another attempt, reject and try again with more specific / clear instructions, articulating exactly what you want it to do and not to do
 6. If this still does not work, then you likely need to break down the task into smaller sub-tasks and ask the LLM to do each of those one at a time or just do it yourself manually
 
-Remember: You are responsible for all code that you ship, whether it was written by you or by an LLM that you directed. This means it is crucial that you review what the LLM writes. To make this easier, we provide natural language descriptions of the actions the LLM took in the Continue GUI.
+Remember: You are responsible for all code that you ship, whether it was written by you or by an LLM that you directed. This means it is crucial that you review what the LLM writes. To make this easier, we provide natural language descriptions of the actions the LLM took in the FazzaPilot GUI.
 
-## When to use Continue
+## When to use FazzaPilot
 
-Here are tasks that Continue excels at helping you complete:
+Here are tasks that FazzaPilot excels at helping you complete:
 
 ### Laborious edits
 
-Continue works well in situations where find and replace does not work (i.e. “/edit change all of these to be like that”)
+FazzaPilot works well in situations where find and replace does not work (i.e. “/edit change all of these to be like that”)
 
 Examples
 
@@ -44,7 +44,7 @@ Examples
 
 ### Writing files from scratch
 
-Continue can help you get started building React components, Python scripts, Shell scripts, Makefiles, unit tests, etc.
+FazzaPilot can help you get started building React components, Python scripts, Shell scripts, Makefiles, unit tests, etc.
 
 Examples
 
@@ -53,7 +53,7 @@ Examples
 
 ### Creating boilerplate from scratch
 
-Continue can go even further. For example, it can help build the scaffolding for a Python package, which includes a typer cli app to sort the arguments and print them back out.
+FazzaPilot can go even further. For example, it can help build the scaffolding for a Python package, which includes a typer cli app to sort the arguments and print them back out.
 
 Examples
 
@@ -62,7 +62,7 @@ Examples
 
 ### Fix highlighted code
 
-After selecting the code section(s), try to refactor it with Continue (e.g “/edit change the function to work like this” or “/edit do this everywhere”)
+After selecting the code section(s), try to refactor it with FazzaPilot (e.g “/edit change the function to work like this” or “/edit do this everywhere”)
 
 Examples
 
@@ -80,7 +80,7 @@ Examples
 
 ### Ask about errors
 
-Continue can also help explain errors / exceptions and offer possible solutions. When you come across an error / exception in your terminal, press `cmd+shift+r` (MacOS) / `ctrl+shift+r` (Windows). This will throw the stack trace into Continue and ask for it to explain the issue to you.
+FazzaPilot can also help explain errors / exceptions and offer possible solutions. When you come across an error / exception in your terminal, press `cmd+shift+r` (MacOS) / `ctrl+shift+r` (Windows). This will throw the stack trace into FazzaPilot and ask for it to explain the issue to you.
 
 ### Figure out what shell command to run
 
@@ -102,7 +102,7 @@ Examples
 
 ### Editing small existing files
 
-You can highlight an entire file and ask Continue to improve it as long as the file is not too large.
+You can highlight an entire file and ask FazzaPilot to improve it as long as the file is not too large.
 
 Examples
 
@@ -115,28 +115,28 @@ Similar to how you would make changes manually, focus on one file at a time. But
 
 ### Tasks with a few steps
 
-There are many more tasks that Continue can help you complete. Typically, these will be tasks that don't involve too many steps to complete.
+There are many more tasks that FazzaPilot can help you complete. Typically, these will be tasks that don't involve too many steps to complete.
 
 Examples
 
 - “/edit make an IAM policy that creates a user with read-only access to S3”
 - “/edit change this plot into a bar chart in this dashboard component”
 
-## When to not use Continue
+## When to not use FazzaPilot
 
-Here are tasks that Continue is **not** helpful with today:
+Here are tasks that FazzaPilot is **not** helpful with today:
 
 ### Deep debugging
 
-If you are 20 minutes into debugging a complicated issue across many files, then Continue won’t be able to help you connect the dots yet. That said, Continue can provide ideas of what you might do at different points if you share what you have figured out along the way and ask for ideas of what to try.
+If you are 20 minutes into debugging a complicated issue across many files, then FazzaPilot won’t be able to help you connect the dots yet. That said, FazzaPilot can provide ideas of what you might do at different points if you share what you have figured out along the way and ask for ideas of what to try.
 
 ### Multi-file edits in parallel
 
-At the moment, Continue can only edit one file at a time. If you figure out which files need to change, you can direct Continue to help you change them one at a time though.
+At the moment, FazzaPilot can only edit one file at a time. If you figure out which files need to change, you can direct FazzaPilot to help you change them one at a time though.
 
 ### Using context of the entire file
 
-If files get too large, it can be difficult for Continue to fit them into the limited LLM context windows. Try to highlight the section of code that include the relevant context. It's rare that you need the entire file.
+If files get too large, it can be difficult for FazzaPilot to fit them into the limited LLM context windows. Try to highlight the section of code that include the relevant context. It's rare that you need the entire file.
 
 ### Editing large files
 
@@ -148,4 +148,4 @@ If you highlight very long lines (e.g. a complex SVG), you might also run into i
 
 ### Tasks with many steps
 
-There are other tasks that Continue won't be able to take on entirely at once. However, typically, if you figure out how to break the task into sub-tasks, you can get help from Continue with those.
+There are other tasks that FazzaPilot won't be able to take on entirely at once. However, typically, if you figure out how to break the task into sub-tasks, you can get help from FazzaPilot with those.

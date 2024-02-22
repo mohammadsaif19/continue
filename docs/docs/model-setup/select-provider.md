@@ -6,7 +6,7 @@ keywords: [openai, anthropic, PaLM, ollama, ggml]
 
 # Select a model provider
 
-Continue makes it easy to swap out different LLM providers. You can either click the "+" button next to the model dropdown to configure in the GUI or manually add them to your `config.json`. Once you've done this, you will be able to switch between them in the model selection dropdown.
+FazzaPilot makes it easy to swap out different LLM providers. You can either click the "+" button next to the model dropdown to configure in the GUI or manually add them to your `config.json`. Once you've done this, you will be able to switch between them in the model selection dropdown.
 
 **In addition to selecting a model provider, you will need to figure out [what LLM to use](./select-model.md).**
 

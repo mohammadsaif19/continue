@@ -7,7 +7,7 @@ const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Continue",
+  title: "FazzaPilot",
   tagline:
     "the open-source library for accelerating software development with language models",
   favicon: "img/favicon.ico",
@@ -69,9 +69,9 @@ const config = {
       // Replace with your project's social card
       image: "img/continue-social-card.png",
       navbar: {
-        title: "Continue",
+        title: "FazzaPilot",
         logo: {
-          alt: "Continue Logo",
+          alt: "FazzaPilot Logo",
           src: "img/logo.png",
           href: "https://continue.dev",
         },
@@ -101,7 +101,7 @@ const config = {
               },
               {
                 label: "VS Code",
-                to: "https://marketplace.visualstudio.com/items?itemName=Continue.continue",
+                to: "https://marketplace.visualstudio.com/items?itemName=FazzaPilot.continue",
               },
             ],
           },
@@ -132,7 +132,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Continue Dev, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} FazzaPilot Dev, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,

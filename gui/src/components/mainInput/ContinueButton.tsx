@@ -37,7 +37,7 @@ const StyledButton = styled(Button)<{
   }
 `;
 
-function ContinueButton(props: {
+function FazzaPilotButton(props: {
   onClick?: () => void;
   hidden?: boolean;
   disabled: boolean;
@@ -90,4 +90,4 @@ function ContinueButton(props: {
   );
 }
 
-export default ContinueButton;
+export default FazzaPilotButton;

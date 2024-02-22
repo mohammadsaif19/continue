@@ -233,8 +233,8 @@ function TipTapEditor(props: TipTapEditorProps) {
       Placeholder.configure({
         placeholder: () =>
           historyLengthRef.current === 0
-            ? "Ask a question, '/' for slash commands, '@' to add context"
-            : "Ask a follow-up",
+            ? "Ask any question to Fazza Pilot"
+            : "Ask more from Fazza Pilot",
       }),
       Paragraph.extend({
         addKeyboardShortcuts() {
@@ -379,19 +379,20 @@ function TipTapEditor(props: TipTapEditorProps) {
     }
     const handler = async (event: any) => {
       if (!editor) return;
+      console.log(event);
 
       if (event.data.type === "userInput") {
         const input = event.data.input;
         editor.commands.insertContent(input);
         onEnterRef.current(editor.getJSON());
-      } else if (event.data.type === "focusContinueInput") {
+      } else if (event.data.type === "focusFazzaPilotInput") {
         if (historyLength > 0) {
           saveSession();
         }
         editor.commands.focus("end");
-      } else if (event.data.type === "focusContinueInputWithoutClear") {
+      } else if (event.data.type === "focusFazzaPilotInputWithoutClear") {
         editor.commands.focus("end");
-      } else if (event.data.type === "focusContinueInputWithNewSession") {
+      } else if (event.data.type === "focusFazzaPilotInputWithNewSession") {
         saveSession();
         editor.commands.focus("end");
       } else if (event.data.type === "highlightedCode") {

@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "@lancedb/vectordb-darwin-arm64": "^0.4.3",
-    "vectordb": "^0.4.3"
+    "vectordb": "^0.4.10"
   }
 }

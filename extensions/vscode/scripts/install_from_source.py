@@ -38,28 +38,28 @@ def main():
     resp2 = run("python3 --version")
     if resp1.returncode != 0 and resp2.returncode != 0:
         print(
-            "Python is required for Continue but is not installed on your machine. See https://www.python.org/downloads/ to download the latest version, then try again."
+            "Python is required for FazzaPilot but is not installed on your machine. See https://www.python.org/downloads/ to download the latest version, then try again."
         )
         return
 
     resp = run("node --version")
     if resp.returncode != 0:
         print(
-            "Node is required for Continue but is not installed on your machine. See https://nodejs.org/en/download/ to download the latest version, then try again."
+            "Node is required for FazzaPilot but is not installed on your machine. See https://nodejs.org/en/download/ to download the latest version, then try again."
         )
         return
 
     resp = run("npm --version")
     if resp.returncode != 0:
         print(
-            "NPM is required for Continue but is not installed on your machine. See https://nodejs.org/en/download/ to download the latest version, then try again."
+            "NPM is required for FazzaPilot but is not installed on your machine. See https://nodejs.org/en/download/ to download the latest version, then try again."
         )
         return
 
     resp = run("poetry --version")
     if resp.returncode != 0:
         print(
-            "Poetry is required for Continue but is not installed on your machine. See https://python-poetry.org/docs/#installation to download the latest version, then try again."
+            "Poetry is required for FazzaPilot but is not installed on your machine. See https://python-poetry.org/docs/#installation to download the latest version, then try again."
         )
         return
 
@@ -95,7 +95,7 @@ def main():
         f"NODE_OPTIONS='--no-warnings' {editor_cmd} --install-extension {return_vsix(build_directory)}"
     )
     print(
-        f"Continue extension installed successfully in {editor_name}. Please restart your editor to use it."
+        f"FazzaPilot extension installed successfully in {editor_name}. Please restart your editor to use it."
     )
 
 

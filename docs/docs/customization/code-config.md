@@ -1,8 +1,8 @@
 # Code Configuration
 
-To allow added flexibility and eventually support an entire plugin ecosystem, Continue can be configured programmatically in a Python file, `~/.continue/config.ts`.
+To allow added flexibility and eventually support an entire plugin ecosystem, FazzaPilot can be configured programmatically in a Python file, `~/.continue/config.ts`.
 
-Whenever Continue loads, it carries out the following steps:
+Whenever FazzaPilot loads, it carries out the following steps:
 
 1. Load `~/.continue/config.json`
 2. Convert this into a `Config` object

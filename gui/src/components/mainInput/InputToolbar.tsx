@@ -76,7 +76,7 @@ function InputToolbar(props: InputToolbarProps) {
   return (
     <StyledDiv hidden={props.hidden} onClick={props.onClick} id="input-toolbar">
       <span className="cursor-pointer mr-auto flex items-center">
-        <span
+        {/* <span
           style={{
             color: lightGray,
           }}
@@ -86,7 +86,7 @@ function InputToolbar(props: InputToolbarProps) {
           className="hover:underline cursor-pointer"
         >
           + Add Context
-        </span>
+        </span> */}
         {defaultModel &&
           modelSupportsImages(defaultModel.provider, defaultModel.model) && (
             <span

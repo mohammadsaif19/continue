@@ -1,6 +1,6 @@
-import { SerializedContinueConfig } from "..";
+import { SerializedFazzaPilotConfig } from "..";
 
-const defaultConfig: SerializedContinueConfig = {
+const defaultConfig: SerializedFazzaPilotConfig = {
   models: [
     {
       title: "GPT-4 (Free Trial)",

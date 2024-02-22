@@ -1,9 +1,9 @@
 {
-  "title": "ContinueError",
-  "$ref": "#/definitions/continuedev__core__main__ContinueError",
+  "title": "FazzaPilotError",
+  "$ref": "#/definitions/continuedev__core__main__FazzaPilotError",
   "definitions": {
-    "continuedev__core__main__ContinueError": {
-      "title": "ContinueError",
+    "continuedev__core__main__FazzaPilotError": {
+      "title": "FazzaPilotError",
       "type": "object",
       "properties": {
         "title": {
@@ -15,10 +15,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "title",
-        "message"
-      ]
+      "required": ["title", "message"]
     }
   }
 }

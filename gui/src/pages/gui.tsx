@@ -27,7 +27,7 @@ import {
 import FTCDialog from "../components/dialogs/FTCDialog";
 import StepContainer from "../components/gui/StepContainer";
 import TimelineItem from "../components/gui/TimelineItem";
-import ContinueInputBox from "../components/mainInput/ContinueInputBox";
+import FazzaPilotInputBox from "../components/mainInput/ContinueInputBox";
 import useChatHandler from "../hooks/useChatHandler";
 import useHistory from "../hooks/useHistory";
 import { defaultModelSelector } from "../redux/selectors/modelSelectors";
@@ -275,7 +275,7 @@ function GUI(props: GUIProps) {
           dispatch(
             setDialogMessage(
               <div className="text-center p-4">
-                👋 Thanks for using Continue. We are a beta product and love
+                👋 Thanks for using FazzaPilot. We are a beta product and love
                 working closely with our first users. If you're interested in
                 speaking, enter your name and email. We won't use this
                 information for anything other than reaching out.
@@ -390,7 +390,7 @@ function GUI(props: GUIProps) {
                     }}
                   >
                     {item.message.role === "user" ? (
-                      <ContinueInputBox
+                      <FazzaPilotInputBox
                         onEnter={async (editorState) => {
                           streamResponse(editorState, index);
                         }}
@@ -398,7 +398,7 @@ function GUI(props: GUIProps) {
                         isMainInput={false}
                         editorState={item.editorState}
                         contextItems={item.contextItems}
-                      ></ContinueInputBox>
+                      ></FazzaPilotInputBox>
                     ) : (
                       <TimelineItem
                         item={item}
@@ -453,11 +453,11 @@ function GUI(props: GUIProps) {
 
           <div ref={aboveComboBoxDivRef} />
           {active || (
-            <ContinueInputBox
+            <FazzaPilotInputBox
               onEnter={sendInput}
               isLastUserInput={false}
               isMainInput={true}
-            ></ContinueInputBox>
+            ></FazzaPilotInputBox>
           )}
           {active ? (
             <>

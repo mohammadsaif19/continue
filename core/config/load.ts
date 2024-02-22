@@ -4,14 +4,14 @@ import {
   Config,
   ContextProviderDescription,
   ContextProviderWithParams,
-  ContinueConfig,
-  ContinueRcJson,
+  FazzaPilotConfig,
+  FazzaPilotRcJson,
   CustomContextProvider,
   CustomLLM,
   EmbeddingsProviderDescription,
   IContextProvider,
   ModelDescription,
-  SerializedContinueConfig,
+  SerializedFazzaPilotConfig,
   SlashCommand,
   SlashCommandDescription,
 } from "..";
@@ -37,11 +37,11 @@ import {
 } from "../util/paths";
 
 function loadSerializedConfig(
-  workspaceConfigs: ContinueRcJson[]
-): SerializedContinueConfig {
+  workspaceConfigs: FazzaPilotRcJson[]
+): SerializedFazzaPilotConfig {
   const configPath = getConfigJsonPath();
   let contents = fs.readFileSync(configPath, "utf8");
-  let config = JSON.parse(contents) as SerializedContinueConfig;
+  let config = JSON.parse(contents) as SerializedFazzaPilotConfig;
   if (config.allowAnonymousTelemetry === undefined) {
     config.allowAnonymousTelemetry = true;
   }
@@ -124,7 +124,7 @@ function loadSerializedConfig(
 }
 
 function serializedToIntermediateConfig(
-  initial: SerializedContinueConfig
+  initial: SerializedFazzaPilotConfig
 ): Config {
   const slashCommands: SlashCommand[] = [];
   for (const command of initial.slashCommands || []) {
@@ -162,7 +162,7 @@ function isContextProviderWithParams(
 async function intermediateToFinalConfig(
   config: Config,
   readFile: (filepath: string) => Promise<string>
-): Promise<ContinueConfig> {
+): Promise<FazzaPilotConfig> {
   const models: BaseLLM[] = [];
   for (const desc of config.models) {
     if (isModelDescription(desc)) {
@@ -275,7 +275,7 @@ async function intermediateToFinalConfig(
   };
 }
 
-interface BrowserSerializedContinueConfig {
+interface BrowserSerializedFazzaPilotConfig {
   allowAnonymousTelemetry?: boolean;
   models: ModelDescription[];
   systemMessage?: string;
@@ -289,8 +289,8 @@ interface BrowserSerializedContinueConfig {
 }
 
 function finalToBrowserConfig(
-  final: ContinueConfig
-): BrowserSerializedContinueConfig {
+  final: FazzaPilotConfig
+): BrowserSerializedFazzaPilotConfig {
   return {
     allowAnonymousTelemetry: final.allowAnonymousTelemetry,
     models: final.models.map((m) => ({
@@ -354,8 +354,8 @@ async function buildConfigTs(browser: boolean) {
 
 async function loadFullConfigNode(
   readFile: (filepath: string) => Promise<string>,
-  workspaceConfigs: ContinueRcJson[]
-): Promise<ContinueConfig> {
+  workspaceConfigs: FazzaPilotRcJson[]
+): Promise<FazzaPilotConfig> {
   let serialized = loadSerializedConfig(workspaceConfigs);
   let intermediate = serializedToIntermediateConfig(serialized);
 
@@ -383,5 +383,5 @@ export {
   intermediateToFinalConfig,
   loadFullConfigNode,
   serializedToIntermediateConfig,
-  type BrowserSerializedContinueConfig,
+  type BrowserSerializedFazzaPilotConfig,
 };

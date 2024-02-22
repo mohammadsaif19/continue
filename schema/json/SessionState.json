@@ -2,8 +2,8 @@
   "title": "SessionState",
   "$ref": "#/definitions/continuedev__core__main__SessionState",
   "definitions": {
-    "ContinueError": {
-      "title": "ContinueError",
+    "FazzaPilotError": {
+      "title": "FazzaPilotError",
       "type": "object",
       "properties": {
         "title": {
@@ -15,10 +15,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "title",
-        "message"
-      ]
+      "required": ["title", "message"]
     },
     "Observation": {
       "title": "Observation",
@@ -54,7 +51,7 @@
           "type": "integer"
         },
         "error": {
-          "$ref": "#/definitions/ContinueError"
+          "$ref": "#/definitions/FazzaPilotError"
         },
         "observations": {
           "title": "Observations",
@@ -96,10 +93,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "provider_title",
-        "item_id"
-      ]
+      "required": ["provider_title", "item_id"]
     },
     "ContextItemDescription": {
       "title": "ContextItemDescription",
@@ -118,11 +112,7 @@
           "$ref": "#/definitions/ContextItemId"
         }
       },
-      "required": [
-        "name",
-        "description",
-        "id"
-      ]
+      "required": ["name", "description", "id"]
     },
     "ContextItem": {
       "title": "ContextItem",
@@ -147,14 +137,11 @@
           "type": "boolean"
         }
       },
-      "required": [
-        "description",
-        "content"
-      ]
+      "required": ["description", "content"]
     },
     "continuedev__core__main__SessionState": {
       "title": "SessionState",
-      "description": "Full session history and important state needed for autopilot to Continue",
+      "description": "Full session history and important state needed for autopilot to FazzaPilot",
       "type": "object",
       "properties": {
         "history": {
@@ -172,10 +159,7 @@
           }
         }
       },
-      "required": [
-        "history",
-        "context_items"
-      ]
+      "required": ["history", "context_items"]
     }
   }
 }

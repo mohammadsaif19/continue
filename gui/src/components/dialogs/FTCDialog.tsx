@@ -23,9 +23,9 @@ function FTCDialog() {
     <div className="p-4">
       <h3>Free Trial Limit Reached</h3>
       <p>
-        You've reached the free trial limit of 250 free inputs with Continue's
-        OpenAI API key. To keep using Continue, you can either use your own API
-        key, or use a local LLM. To read more about the options, see our{" "}
+        You've reached the free trial limit of 250 free inputs with FazzaPilot's
+        OpenAI API key. To keep using FazzaPilot, you can either use your own
+        API key, or use a local LLM. To read more about the options, see our{" "}
         <a
           href="https://continue.dev/docs/customization/models"
           target="_blank"
@@ -33,7 +33,7 @@ function FTCDialog() {
           documentation
         </a>
         . If you're just looking for fastest way to keep going, type '/config'
-        to open your Continue config file and paste your API key into the
+        to open your FazzaPilot config file and paste your API key into the
         OpenAIFreeTrial object.
       </p>
 

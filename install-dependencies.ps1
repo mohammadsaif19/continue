@@ -6,7 +6,7 @@
 # Everything needs node and npm
 Write-Host "`nChecking for dependencies that may require manual installation...`n" -ForegroundColor White
 
-$cargo = (get-command cargo -ErrorAction SilentlyContinue)
+$cargo = (get-command cargo -ErrorAction SilentlyFazzaPilot)
 if ($null -eq $cargo) {
     Write-Host "Not Found " -ForegroundColor Red -NoNewLine
     Write-Host "cargo"
@@ -15,7 +15,7 @@ if ($null -eq $cargo) {
     & cargo --version
 }
 
-$node  = (get-command node -ErrorAction SilentlyContinue)
+$node  = (get-command node -ErrorAction SilentlyFazzaPilot)
 if ($null -eq $node) {
     Write-Host "Not Found " -ForegroundColor Red -NoNewLine
     Write-Host "node"
@@ -26,7 +26,7 @@ if ($null -eq $node) {
 }
 
 Push-Location extensions/vscode
-$yarn  = (get-command yarn -ErrorAction SilentlyContinue)
+$yarn  = (get-command yarn -ErrorAction SilentlyFazzaPilot)
 if ($null -eq $yarn) {
     Write-Host "Not Found " -ForegroundColor Red -NoNewLine
     Write-Host "yarn"

@@ -215,7 +215,7 @@ class IdeProtocolClient {
     vscode.commands.executeCommand("workbench.action.closeAuxiliaryBar");
     const panel = vscode.window.createWebviewPanel(
       "continue.continueGUIView",
-      "Continue",
+      "FazzaPilot",
       vscode.ViewColumn.One
     );
     panel.webview.html = getSidebarContent(
@@ -268,7 +268,7 @@ class IdeProtocolClient {
 
     // If not, ask user for secret
     secret = await vscode.window.showInputBox({
-      prompt: `Either enter secret for ${key} or press enter to try Continue for free.`,
+      prompt: `Either enter secret for ${key} or press enter to try FazzaPilot for free.`,
       password: true,
     });
 

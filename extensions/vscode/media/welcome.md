@@ -1,10 +1,10 @@
-# 👋 Welcome to Continue
+# 👋 Welcome to FazzaPilot
 
 ## ❗️ Before you get started
 
-Continue is currently in the left sidebar, but we recommend moving it to the right. This way it won't cover your file explorer. You can move it back at any time.
+FazzaPilot is currently in the left sidebar, but we recommend moving it to the right. This way it won't cover your file explorer. You can move it back at any time.
 
-![Move Continue to right sidebar](./sidebar.gif)
+![Move FazzaPilot to right sidebar](./sidebar.gif)
 
 ## 🔑 Most important shortcuts
 

@@ -6,7 +6,7 @@ keywords: [json, config, configuration, migration]
 
 # Migration to `config.json`
 
-On November 20, 2023, we migrated to using JSON as the primary config file format. If you previously used Continue, we will have attempted to automatically translate your existing config.py into a config.json file. If this fails, we will fallback to a default config.json. Your previous config.py will still be kept, but moved to config.py.old for reference. Below you can find a list of changes that were made in case you need to manually migrate your config, as well as examples of proper config.json files.
+On November 20, 2023, we migrated to using JSON as the primary config file format. If you previously used FazzaPilot, we will have attempted to automatically translate your existing config.py into a config.json file. If this fails, we will fallback to a default config.json. Your previous config.py will still be kept, but moved to config.py.old for reference. Below you can find a list of changes that were made in case you need to manually migrate your config, as well as examples of proper config.json files.
 
 The JSON format provides stronger guiderails, making it easier to write a valid config, while still allowing Intellisense in VS Code.
 
@@ -14,7 +14,7 @@ If you need any help migrating, please reach out to us on Discord.
 
 ## Configuration as Code
 
-> Continue has moved to using Typescript configuration. To learn about this, please see [Configuration as Code](../customization/code-config.md).
+> FazzaPilot has moved to using Typescript configuration. To learn about this, please see [Configuration as Code](../customization/code-config.md).
 
 For configuration that requires code, we now provide a simpler interface that works alongside config.json. In the same folder, `~/.continue`, create a file named `config.ts` and add a function called `modifyConfig`. This function should take a `Config` object as its only argument, and return a `Config` object. This object is essentially the same as the one that was previously defined in `config.py`. This allows you to modify the initial configuration object defined in your `config.json`. Here's an example that cuts the temperature in half:
 
@@ -122,7 +122,7 @@ After the "Full example" these examples will only show the relevant portion of t
     },
     {
       "name": "config",
-      "description": "Customize Continue",
+      "description": "Customize FazzaPilot",
       "step": "OpenConfigStep"
     },
     {

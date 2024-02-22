@@ -1,11 +1,11 @@
 import * as fs from "fs";
 import { DiffLine, IDE, Problem } from "..";
-import { BrowserSerializedContinueConfig } from "../config/load";
+import { BrowserSerializedFazzaPilotConfig } from "../config/load";
 import { Chunk } from "../index";
-import { getContinueGlobalPath } from "../util/paths";
+import { getFazzaPilotGlobalPath } from "../util/paths";
 
 class FileSystemIde implements IDE {
-  async getSerializedConfig(): Promise<BrowserSerializedContinueConfig> {
+  async getSerializedConfig(): Promise<BrowserSerializedFazzaPilotConfig> {
     throw new Error("Not implemented");
   }
 
@@ -58,8 +58,8 @@ class FileSystemIde implements IDE {
   showVirtualFile(title: string, contents: string): Promise<void> {
     return Promise.resolve();
   }
-  getContinueDir(): Promise<string> {
-    return Promise.resolve(getContinueGlobalPath());
+  getFazzaPilotDir(): Promise<string> {
+    return Promise.resolve(getFazzaPilotGlobalPath());
   }
   openFile(path: string): Promise<void> {
     return Promise.resolve();

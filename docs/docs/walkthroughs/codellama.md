@@ -1,20 +1,20 @@
 ---
-title: Using Code Llama with Continue
-description: How to use Code Llama with Continue
+title: Using Code Llama with FazzaPilot
+description: How to use Code Llama with FazzaPilot
 keywords: [code llama, meta, togetherai, ollama, replciate, fastchat]
 ---
 
-# Using Code Llama with Continue
+# Using Code Llama with FazzaPilot
 
-With Continue, you can use Code Llama as a drop-in replacement for GPT-4, either by running locally with Ollama or GGML or through Replicate.
+With FazzaPilot, you can use Code Llama as a drop-in replacement for GPT-4, either by running locally with Ollama or GGML or through Replicate.
 
-If you haven't already installed Continue, you can do that [here](https://marketplace.visualstudio.com/items?itemName=Continue.continue). For more general information on customizing Continue, read [our customization docs](../customization/overview.md).
+If you haven't already installed FazzaPilot, you can do that [here](https://marketplace.visualstudio.com/items?itemName=FazzaPilot.continue). For more general information on customizing FazzaPilot, read [our customization docs](../customization/overview.md).
 
 ## TogetherAI
 
 1. Create an account [here](https://api.together.xyz/signup)
 2. Copy your API key that appears on the welcome screen
-3. Update your Continue config file like this:
+3. Update your FazzaPilot config file like this:
 
 ```json title="~/.continue/config.json"
 {
@@ -33,7 +33,7 @@ If you haven't already installed Continue, you can do that [here](https://market
 
 1. Download Ollama [here](https://ollama.ai/) (it should walk you through the rest of these steps)
 2. Open a terminal and run `ollama run codellama`
-3. Change your Continue config file like this:
+3. Change your FazzaPilot config file like this:
 
 ```json title="~/.continue/config.json"
 {
@@ -50,7 +50,7 @@ If you haven't already installed Continue, you can do that [here](https://market
 ## Replicate
 
 1. Get your Replicate API key [here](https://replicate.ai/)
-2. Change your Continue config file like this:
+2. Change your FazzaPilot config file like this:
 
 ```json title="~/.continue/config.json"
 {
@@ -69,7 +69,7 @@ If you haven't already installed Continue, you can do that [here](https://market
 
 1. Setup the FastChat API (https://github.com/lm-sys/FastChat) to use one of the Codellama models on Hugging Face (e.g: codellama/CodeLlama-7b-Instruct-hf).
 2. Start the OpenAI compatible API (ref: https://github.com/lm-sys/FastChat/blob/main/docs/openai_api.md).
-3. Change your Continue config file like this:
+3. Change your FazzaPilot config file like this:
 
 ```json title="~/.continue/config.json"
 {

@@ -1,12 +1,12 @@
 > 🎉 **Tab autocomplete now available in pre-release (experimental)**
 
-![Continue logo](media/c_d.png)
+![FazzaPilot logo](media/c_d.png)
 
-<h1 align="center">Continue</h1>
+<h1 align="center">FazzaPilot</h1>
 
 <div align="center">
 
-**[Continue](https://continue.dev/docs) is an open-source autopilot for VS Code and JetBrains—the easiest way to code with any LLM**
+**[FazzaPilot](https://continue.dev/docs) is an open-source autopilot for VS Code and JetBrains—the easiest way to code with any LLM**
 
 </div>
 
@@ -30,7 +30,7 @@
 
 # 🔎 Ask about highlighted code
 
-![Editing With Continue](media/readme.gif)
+![Editing With FazzaPilot](media/readme.gif)
 
 Highlight + select code sections and ask a question to get another perspective
 
@@ -48,11 +48,11 @@ Highlight + select code sections and ask a question to get another perspective
 
 # ⚡️ Get completions directly in your editor
 
-![Continue autocomplete](media/autocomplete.gif)
+![FazzaPilot autocomplete](media/autocomplete.gif)
 
 # ✏️ Edit in natural language
 
-Highlight + select a section of code and instruct Continue to refactor it
+Highlight + select a section of code and instruct FazzaPilot to refactor it
 
 - “/edit migrate this digital ocean terraform file into one that works for GCP”
 - “/edit change this plot into a bar chart in this dashboard component”
@@ -64,7 +64,7 @@ Highlight + select a section of code and instruct Continue to refactor it
 
 ![Generate files from scratch](media/scratch.gif)
 
-Open a blank file, <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>, and let Continue start new Python scripts, React components, etc.
+Open a blank file, <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>, and let FazzaPilot start new Python scripts, React components, etc.
 
 - “here is a connector for postgres, now write one for kafka”
 - “make an IAM policy that creates a user with read-only access to S3”
@@ -72,10 +72,10 @@ Open a blank file, <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>, and le
 
 # Getting Started
 
-You can try out Continue for free using a proxy server that securely makes calls with our API key to models like GPT-4, Gemini Pro, and Phind CodeLlama via OpenAI, Google, and Together respectively.
+You can try out FazzaPilot for free using a proxy server that securely makes calls with our API key to models like GPT-4, Gemini Pro, and Phind CodeLlama via OpenAI, Google, and Together respectively.
 
 Once you're ready to use your own API key or a different model / provider, press the `+` button in the bottom left to add a new model to your `config.json`. Learn more about the models and providers [here](https://continue.dev/docs/model-setup/overview).
 
 ## License
 
-[Apache 2.0 © 2023 Continue Dev, Inc.](./LICENSE)
+[Apache 2.0 © 2023 FazzaPilot Dev, Inc.](./LICENSE)

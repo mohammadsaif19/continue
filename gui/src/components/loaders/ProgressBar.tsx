@@ -69,7 +69,7 @@ const ProgressBar = ({ completed, total }: ProgressBarProps) => {
       </a>
       <StyledTooltip id="usage_progress_bar" place="bottom">
         {
-          "Continue allows you to use our OpenAI API key for up to 250 inputs. After this, you can either use your own API key, or use a local LLM. Click the progress bar to go to the docs and learn more."
+          "FazzaPilot allows you to use our OpenAI API key for up to 250 inputs. After this, you can either use your own API key, or use a local LLM. Click the progress bar to go to the docs and learn more."
         }
       </StyledTooltip>
     </>

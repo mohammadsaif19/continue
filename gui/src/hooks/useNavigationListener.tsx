@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const openGUITypes = [
   "highlightedCode",
   "newSessionWithPrompt",
-  "focusContinueInput",
-  "focusContinueInputWithoutClear",
+  "focusFazzaPilotInput",
+  "focusFazzaPilotInputWithoutClear",
   "newSession",
 ];
 
@@ -15,15 +15,14 @@ export const useNavigationListener = () => {
 
   useEffect(() => {
     const listener = (e) => {
-      if(openGUITypes.includes(e.data.type)) {
-        
+      if (openGUITypes.includes(e.data.type)) {
         navigate("/");
         setTimeout(() => {
           window.postMessage(e.data, "*");
         }, 200);
       }
 
-      if(e.data.type === "viewHistory") {
+      if (e.data.type === "viewHistory") {
         // Toggle the history page / main page
         if (location.pathname === "/history") {
           navigate("/");
@@ -39,4 +38,4 @@ export const useNavigationListener = () => {
       window.removeEventListener("message", listener);
     };
   }, [navigate]);
-}
+};

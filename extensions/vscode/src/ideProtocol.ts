@@ -1,5 +1,5 @@
 import { exec } from "child_process";
-import { getContinueGlobalPath } from "core/util/paths";
+import { getFazzaPilotGlobalPath } from "core/util/paths";
 import * as path from "path";
 import * as vscode from "vscode";
 import { ideProtocolClient } from "./activation/activate";
@@ -7,7 +7,7 @@ import { ideProtocolClient } from "./activation/activate";
 import * as child_process from "child_process";
 import { Chunk, DiffLine, IDE, Problem } from "core";
 import {
-  BrowserSerializedContinueConfig,
+  BrowserSerializedFazzaPilotConfig,
   finalToBrowserConfig,
 } from "core/config/load";
 import { LanceDbIndex } from "core/indexing/LanceDbIndex";
@@ -18,7 +18,7 @@ import { traverseDirectory } from "./util/traverseDirectory";
 import { getExtensionUri, openEditorAndRevealRange } from "./util/vscode";
 
 class VsCodeIde implements IDE {
-  async getSerializedConfig(): Promise<BrowserSerializedContinueConfig> {
+  async getSerializedConfig(): Promise<BrowserSerializedFazzaPilotConfig> {
     const config = await configHandler.loadConfig();
     return finalToBrowserConfig(config);
   }
@@ -66,8 +66,8 @@ class VsCodeIde implements IDE {
     return ideProtocolClient.getWorkspaceDirectories();
   }
 
-  async getContinueDir(): Promise<string> {
-    return getContinueGlobalPath();
+  async getFazzaPilotDir(): Promise<string> {
+    return getFazzaPilotGlobalPath();
   }
 
   async writeFile(path: string, contents: string): Promise<void> {
@@ -257,7 +257,9 @@ class VsCodeIde implements IDE {
     );
 
     const tags = await Promise.all(
-      (await this.getWorkspaceDirs()).map(async (dir) => {
+      (
+        await this.getWorkspaceDirs()
+      ).map(async (dir) => {
         let branch = await ideProtocolClient.getBranch(vscode.Uri.file(dir));
         let tag: IndexTag = {
           directory: dir,

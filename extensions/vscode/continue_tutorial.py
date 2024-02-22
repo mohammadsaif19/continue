@@ -1,5 +1,5 @@
 """
-Welcome to Continue!
+Welcome to FazzaPilot!
 
 _________               _____ _____                       
 __  ____/______ _______ __  /____(_)_______ ____  _______ 
@@ -35,7 +35,7 @@ def mysterious_function(x):
 
 
 """Step 2: Use the keyboard shortcut [⌘ M] to
-select the code and toggle the Continue input box"""
+select the code and toggle the FazzaPilot input box"""
 
 """Step 3: Ask a question and press Enter"""
 

@@ -1,10 +1,10 @@
-![Continue logo](media/c_d.png)
+![FazzaPilot logo](media/c_d.png)
 
-<h1 align="center">Continue</h1>
+<h1 align="center">FazzaPilot</h1>
 
 <div align="center">
 
-**[Continue](https://continue.dev/docs) is an open-source autopilot for [VS Code](https://marketplace.visualstudio.com/items?itemName=Continue.continue) and [JetBrains](https://plugins.jetbrains.com/plugin/22707-continue-extension)—the easiest way to code with any LLM**
+**[FazzaPilot](https://continue.dev/docs) is an open-source autopilot for [VS Code](https://marketplace.visualstudio.com/items?itemName=FazzaPilot.continue) and [JetBrains](https://plugins.jetbrains.com/plugin/22707-continue-extension)—the easiest way to code with any LLM**
 
 </div>
 
@@ -22,7 +22,7 @@
 
 <p></p>
 
-![Editing With Continue](media/readme.gif)
+![Editing With FazzaPilot](media/readme.gif)
 
 </div>
 
@@ -30,7 +30,7 @@
 
 ### Answer coding questions
 
-Highlight + select sections of code and ask Continue for another perspective
+Highlight + select sections of code and ask FazzaPilot for another perspective
 
 - “what does this forRoot() static function do in nestjs?”
 - “why is the first left join in this query necessary here?”
@@ -38,7 +38,7 @@ Highlight + select sections of code and ask Continue for another perspective
 
 ### Edit in natural language
 
-Highlight + select a section of code and instruct Continue to refactor it
+Highlight + select a section of code and instruct FazzaPilot to refactor it
 
 - “/edit rewrite this to return a flattened list from a 3x3 matrix”
 - “/edit refactor these into an angular flex layout on one line"
@@ -46,7 +46,7 @@ Highlight + select a section of code and instruct Continue to refactor it
 
 ### Generate files from scratch
 
-Open a blank file and let Continue start new Python scripts, React components, etc.
+Open a blank file and let FazzaPilot start new Python scripts, React components, etc.
 
 - “/edit get me started with a basic supabase edge function”
 - “/edit implement a c++ shortest path algo in a concise way”
@@ -60,9 +60,9 @@ Open a blank file and let Continue start new Python scripts, React components, e
 
 ## Getting Started
 
-#### Download for [VS Code](https://marketplace.visualstudio.com/items?itemName=Continue.continue) and [JetBrains](https://plugins.jetbrains.com/plugin/22707-continue-extension)
+#### Download for [VS Code](https://marketplace.visualstudio.com/items?itemName=FazzaPilot.continue) and [JetBrains](https://plugins.jetbrains.com/plugin/22707-continue-extension)
 
-You can try out Continue for free using a proxy server that securely makes calls with our API key to models like GPT-4, Gemini Pro, and Phind CodeLlama via OpenAI, Google, and Together respectively.
+You can try out FazzaPilot for free using a proxy server that securely makes calls with our API key to models like GPT-4, Gemini Pro, and Phind CodeLlama via OpenAI, Google, and Together respectively.
 
 Once you're ready to use your own API key or a different model / provider, press the `+` button in the bottom left to add a new model to your `config.json`. Learn more about the models and providers [here](https://continue.dev/docs/model-setup/overview).
 
@@ -72,4 +72,4 @@ Check out the [contribution ideas board](https://github.com/orgs/continuedev/pro
 
 ## License
 
-[Apache 2.0 © 2023 Continue Dev, Inc.](./LICENSE)
+[Apache 2.0 © 2023 FazzaPilot Dev, Inc.](./LICENSE)

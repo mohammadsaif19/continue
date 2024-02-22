@@ -1,6 +1,6 @@
 {
-  "title": "ContinueConfig",
-  "$ref": "#/definitions/continuedev__core__config__ContinueConfig",
+  "title": "FazzaPilotConfig",
+  "$ref": "#/definitions/continuedev__core__config__FazzaPilotConfig",
   "definitions": {
     "FunctionCall": {
       "title": "FunctionCall",
@@ -15,10 +15,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "name",
-        "arguments"
-      ]
+      "required": ["name", "arguments"]
     },
     "ChatMessage": {
       "title": "ChatMessage",
@@ -26,12 +23,7 @@
       "properties": {
         "role": {
           "title": "Role",
-          "enum": [
-            "assistant",
-            "user",
-            "system",
-            "function"
-          ],
+          "enum": ["assistant", "user", "system", "function"],
           "type": "string"
         },
         "content": {
@@ -51,9 +43,7 @@
           "$ref": "#/definitions/FunctionCall"
         }
       },
-      "required": [
-        "role"
-      ]
+      "required": ["role"]
     },
     "Step": {
       "title": "Step",
@@ -257,9 +247,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "model"
-      ]
+      "required": ["model"]
     },
     "ModelRoles": {
       "title": "ModelRoles",
@@ -286,9 +274,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "default"
-      ]
+      "required": ["default"]
     },
     "CustomCommand": {
       "title": "CustomCommand",
@@ -307,11 +293,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "name",
-        "prompt",
-        "description"
-      ]
+      "required": ["name", "prompt", "description"]
     },
     "SlashCommand": {
       "title": "SlashCommand",
@@ -353,11 +335,7 @@
           "type": "object"
         }
       },
-      "required": [
-        "name",
-        "description",
-        "step"
-      ]
+      "required": ["name", "description", "step"]
     },
     "Policy": {
       "title": "Policy",
@@ -379,10 +357,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "provider_title",
-        "item_id"
-      ]
+      "required": ["provider_title", "item_id"]
     },
     "ContextItemDescription": {
       "title": "ContextItemDescription",
@@ -401,11 +376,7 @@
           "$ref": "#/definitions/ContextItemId"
         }
       },
-      "required": [
-        "name",
-        "description",
-        "id"
-      ]
+      "required": ["name", "description", "id"]
     },
     "ContextItem": {
       "title": "ContextItem",
@@ -430,10 +401,7 @@
           "type": "boolean"
         }
       },
-      "required": [
-        "description",
-        "content"
-      ]
+      "required": ["description", "content"]
     },
     "ContextProvider": {
       "title": "ContextProvider",
@@ -479,12 +447,7 @@
           }
         }
       },
-      "required": [
-        "title",
-        "display_title",
-        "description",
-        "dynamic"
-      ]
+      "required": ["title", "display_title", "description", "dynamic"]
     },
     "RetrievalSettings": {
       "title": "RetrievalSettings",
@@ -550,9 +513,9 @@
         }
       }
     },
-    "continuedev__core__config__ContinueConfig": {
-      "title": "ContinueConfig",
-      "description": "Continue can be deeply customized by editing the `ContinueConfig` object in `~/.continue/config.py` (`%userprofile%\\.continue\\config.py` for Windows) on your machine. This class is instantiated from the config file for every new session.",
+    "continuedev__core__config__FazzaPilotConfig": {
+      "title": "FazzaPilotConfig",
+      "description": "FazzaPilot can be deeply customized by editing the `FazzaPilotConfig` object in `~/.continue/config.py` (`%userprofile%\\.continue\\config.py` for Windows) on your machine. This class is instantiated from the config file for every new session.",
       "type": "object",
       "properties": {
         "steps_on_startup": {
@@ -715,7 +678,7 @@
         },
         "policy_override": {
           "title": "Policy Override",
-          "description": "A Policy object that can be used to override the default behavior of Continue, for example in order to build custom agents that take multiple steps at a time.",
+          "description": "A Policy object that can be used to override the default behavior of FazzaPilot, for example in order to build custom agents that take multiple steps at a time.",
           "allOf": [
             {
               "$ref": "#/definitions/Policy"
@@ -744,13 +707,13 @@
         },
         "disable_summaries": {
           "title": "Disable Summaries",
-          "description": "If set to `True`, Continue will not generate summaries for each Step. This can be useful if you want to save on compute.",
+          "description": "If set to `True`, FazzaPilot will not generate summaries for each Step. This can be useful if you want to save on compute.",
           "default": false,
           "type": "boolean"
         },
         "disable_indexing": {
           "title": "Disable Indexing",
-          "description": "If set to `True`, Continue will not index the codebase. This is mainly used for debugging purposes.",
+          "description": "If set to `True`, FazzaPilot will not index the codebase. This is mainly used for debugging purposes.",
           "default": false,
           "type": "boolean"
         },

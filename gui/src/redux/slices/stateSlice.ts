@@ -7,7 +7,7 @@ import {
   ContextItemWithId,
   PersistedSessionInfo,
 } from "core";
-import { BrowserSerializedContinueConfig } from "core/config/load";
+import { BrowserSerializedFazzaPilotConfig } from "core/config/load";
 import { stripImages } from "core/llm/countTokens";
 import { v4 } from "uuid";
 import { RootStore } from "../store";
@@ -130,7 +130,7 @@ export const stateSlice = createSlice({
   reducers: {
     setConfig: (
       state,
-      { payload }: { payload: BrowserSerializedContinueConfig }
+      { payload }: { payload: BrowserSerializedFazzaPilotConfig }
     ) => {
       const config = payload;
       const defaultModelTitle = config.models.find(

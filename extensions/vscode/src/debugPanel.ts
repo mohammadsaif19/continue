@@ -39,7 +39,7 @@ export async function webviewRequest(
     debugPanelWebview?.postMessage({ type: messageType, data });
 
     setTimeout(() => {
-      reject("Error communciating with Continue side panel: timed out");
+      reject("Error communciating with FazzaPilot side panel: timed out");
       listener?.dispose();
     }, 500);
   });
@@ -227,8 +227,8 @@ export function getSidebarContent(
           );
           break;
         }
-        case "getContinueDir": {
-          respond(await ide.getContinueDir());
+        case "getFazzaPilotDir": {
+          respond(await ide.getFazzaPilotDir());
           break;
         }
         case "openFile": {
@@ -667,14 +667,14 @@ export function getSidebarContent(
         }
       }
     } catch (e: any) {
-      let message = `Continue error: ${e.message}`;
+      let message = `FazzaPilot error: ${e.message}`;
       if (e.cause) {
         if (e.cause.name === "ConnectTimeoutError") {
           message = `Connection timed out. If you expect it to take a long time to connect, you can increase the timeout in config.json by setting "requestOptions": { "timeout": 10000 }. You can find the full config reference here: https://continue.dev/docs/reference/config`;
         } else if (e.cause.code === "ECONNREFUSED") {
           message = `Connection was refused. This likely means that there is no server running at the specified URL. If you are running your own server you may need to set the "apiBase" parameter in config.json. For example, you can set up an OpenAI-compatible server like here: https://continue.dev/docs/reference/Model%20Providers/openai#openai-compatible-servers--apis`;
         } else {
-          message = `The request failed with "${e.cause.name}": ${e.cause.message}. If you're having trouble setting up Continue, please see the troubleshooting guide for help.`;
+          message = `The request failed with "${e.cause.name}": ${e.cause.message}. If you're having trouble setting up FazzaPilot, please see the troubleshooting guide for help.`;
         }
       }
 
@@ -709,7 +709,7 @@ export function getSidebarContent(
         <script>const vscode = acquireVsCodeApi();</script>
         <link href="${styleMainUri}" rel="stylesheet">
 
-        <title>Continue</title>
+        <title>FazzaPilot</title>
       </head>
       <body>
         <div id="root"></div>
@@ -752,7 +752,7 @@ export function getSidebarContent(
     </html>`;
 }
 
-export class ContinueGUIWebviewViewProvider
+export class FazzaPilotGUIWebviewViewProvider
   implements vscode.WebviewViewProvider
 {
   public static readonly viewType = "continue.continueGUIView";

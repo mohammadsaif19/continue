@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Continue API",
-    "description": "Continue API",
+    "title": "FazzaPilot API",
+    "description": "FazzaPilot API",
     "version": "1.0"
   },
   "paths": {

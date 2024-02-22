@@ -120,7 +120,7 @@ class DiffViewerCodeLensProvider implements vscode.CodeLensProvider {
         })
         // new vscode.CodeLens(range, {
         //   title: `Further Edit ✏️ (${getMetaKeyLabel()}⇧M)`,
-        //   command: "continue.focusContinueInputWithEdit",
+        //   command: "continue.focusFazzaPilotInputWithEdit",
         // })
       );
       return codeLenses;
@@ -158,7 +158,7 @@ class ConfigPyCodeLensProvider implements vscode.CodeLensProvider {
     }
 
     const lineOfSystemMessage = lines.findIndex((line) =>
-      line.includes("ContinueConfig(")
+      line.includes("FazzaPilotConfig(")
     );
 
     if (lineOfSystemMessage >= 0) {
@@ -190,7 +190,7 @@ const actions: TutorialCodeLensItems[] = [
     commands: [
       {
         title: `Do it for me`,
-        command: "continue.focusContinueInput",
+        command: "continue.focusFazzaPilotInput",
       },
     ],
   },

@@ -8,7 +8,7 @@ keywords: [configure, llm, provider]
 
 ## Change the default LLM
 
-In `config.json`, you'll find the `models` property, a list of the models that you have saved to use with Continue:
+In `config.json`, you'll find the `models` property, a list of the models that you have saved to use with FazzaPilot:
 
 ```json
 "models": [
@@ -48,13 +48,13 @@ The easiest way to find this information is from the chat playground in the Azur
 
 ## Self-hosting an open-source model
 
-For many cases, either Continue will have a built-in provider or the API you use will be OpenAI-compatible, in which case you can use the "openai" provider and change the "baseUrl" to point to the server.
+For many cases, either FazzaPilot will have a built-in provider or the API you use will be OpenAI-compatible, in which case you can use the "openai" provider and change the "baseUrl" to point to the server.
 
 However, if neither of these are the case, you will need to wire up a new LLM object. Learn how to do this [here](#defining-a-custom-llm-provider).
 
 ## Customizing the Chat Template
 
-Most open-source models expect a specific chat format, for example llama2 and codellama expect the input to look like `"[INST] How do I write bubble sort in Rust? [/INST]"`. Continue will automatically attempt to detect the correct prompt format based on the `model`value that you provide, but if you are receiving nonsense responses, you can use the`template`property to explicitly set the format that you expect. The options are:`["llama2", "alpaca", "zephyr", "phind", "anthropic", "chatml", "openchat", "neural-chat", "none"]`.
+Most open-source models expect a specific chat format, for example llama2 and codellama expect the input to look like `"[INST] How do I write bubble sort in Rust? [/INST]"`. FazzaPilot will automatically attempt to detect the correct prompt format based on the `model`value that you provide, but if you are receiving nonsense responses, you can use the`template`property to explicitly set the format that you expect. The options are:`["llama2", "alpaca", "zephyr", "phind", "anthropic", "chatml", "openchat", "neural-chat", "none"]`.
 
 If you want to create an entirely new chat template, this can be done in [config.ts](../customization/code-config.md) by defining a function and adding it to the `templateMessages` property of your `LLM`. Here is an example of `templateMessages` for the Alpaca/Vicuna format:
 
@@ -120,7 +120,7 @@ You can find all existing templates for /edit in [`core/llm/templates/edit.ts`](
 
 ## Defining a Custom LLM Provider
 
-If you are using an LLM API that isn't already [supported by Continue](./select-provider.md), and is not an OpenAI-compatible API, you'll need to define a `CustomLLM` object in `config.ts`. This object only requires one of (or both of) a `streamComplete` or `streamChat` function. Here is an example:
+If you are using an LLM API that isn't already [supported by FazzaPilot](./select-provider.md), and is not an OpenAI-compatible API, you'll need to define a `CustomLLM` object in `config.ts`. This object only requires one of (or both of) a `streamComplete` or `streamChat` function. Here is an example:
 
 ```typescript title="~/.continue/config.ts"
 export function modifyConfig(config: Config): Config {

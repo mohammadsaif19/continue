@@ -1,12 +1,12 @@
 ---
 title: Overview
-description: Continue can be deeply customized
+description: FazzaPilot can be deeply customized
 keywords: [custom, slash commands, models, context providers]
 ---
 
 # Overview
 
-Continue can be deeply customized by editing `~/.continue/config.json` (`%userprofile%\.continue\config.json` for Windows) and `config.ts` on your machine. These files are created the first time you run Continue.
+FazzaPilot can be deeply customized by editing `~/.continue/config.json` (`%userprofile%\.continue\config.json` for Windows) and `config.ts` on your machine. These files are created the first time you run FazzaPilot.
 
 Currently, you can customize the following:
 

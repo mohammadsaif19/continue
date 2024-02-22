@@ -197,7 +197,7 @@ function useChatHandler(dispatch: Dispatch) {
         );
       }
     } catch (e) {
-      console.log("Continue: error streaming response: ", e);
+      console.log("FazzaPilot: error streaming response: ", e);
       errorPopup(`Error streaming response: ${e.message}`);
     } finally {
       dispatch(setInactive());

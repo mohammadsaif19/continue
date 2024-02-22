@@ -21,7 +21,7 @@ import { ideProtocolClient } from "../activation/activate";
 import { TabAutocompleteModel, configHandler } from "../loadConfig";
 
 const statusBarItemText = (enabled: boolean | undefined) =>
-  enabled ? "$(check) Continue" : "$(circle-slash) Continue";
+  enabled ? "$(check) FazzaPilot" : "$(circle-slash) FazzaPilot";
 
 const statusBarItemTooltip = (enabled: boolean | undefined) =>
   enabled ? "Tab autocomplete is enabled" : "Click to enable tab autocomplete";
@@ -48,7 +48,7 @@ export function setupStatusBar(
     vscode.StatusBarAlignment.Right
   );
   statusBarItem.text = loading
-    ? "$(loading~spin) Continue"
+    ? "$(loading~spin) FazzaPilot"
     : statusBarItemText(enabled);
   statusBarItem.tooltip = statusBarItemTooltip(enabled);
   statusBarItem.command = "continue.toggleTabAutocompleteEnabled";
@@ -369,8 +369,8 @@ async function getTabCompletion(
     };
   } catch (e: any) {
     console.warn("Error generating autocompletion: ", e);
-    if (!ContinueCompletionProvider.errorsShown.has(e.message)) {
-      ContinueCompletionProvider.errorsShown.add(e.message);
+    if (!FazzaPilotCompletionProvider.errorsShown.has(e.message)) {
+      FazzaPilotCompletionProvider.errorsShown.add(e.message);
       vscode.window.showErrorMessage(e.message, "Documentation").then((val) => {
         if (val === "Documentation") {
           vscode.env.openExternal(
@@ -385,7 +385,7 @@ async function getTabCompletion(
   }
 }
 
-export class ContinueCompletionProvider
+export class FazzaPilotCompletionProvider
   implements vscode.InlineCompletionItemProvider
 {
   private static debounceTimeout: NodeJS.Timeout | undefined = undefined;
@@ -403,7 +403,7 @@ export class ContinueCompletionProvider
   ): ProviderResult<InlineCompletionItem[] | InlineCompletionList> {
     // Debounce
     const uuid = uuidv4();
-    ContinueCompletionProvider.lastUUID = uuid;
+    FazzaPilotCompletionProvider.lastUUID = uuid;
 
     const config = await configHandler.loadConfig();
     const options = {
@@ -411,20 +411,20 @@ export class ContinueCompletionProvider
       ...DEFAULT_AUTOCOMPLETE_OPTS,
     };
 
-    if (ContinueCompletionProvider.debouncing) {
-      ContinueCompletionProvider.debounceTimeout?.refresh();
+    if (FazzaPilotCompletionProvider.debouncing) {
+      FazzaPilotCompletionProvider.debounceTimeout?.refresh();
       const lastUUID = await new Promise((resolve) =>
         setTimeout(() => {
-          resolve(ContinueCompletionProvider.lastUUID);
+          resolve(FazzaPilotCompletionProvider.lastUUID);
         }, options.debounceDelay)
       );
       if (uuid !== lastUUID) {
         return [];
       }
     } else {
-      ContinueCompletionProvider.debouncing = true;
-      ContinueCompletionProvider.debounceTimeout = setTimeout(async () => {
-        ContinueCompletionProvider.debouncing = false;
+      FazzaPilotCompletionProvider.debouncing = true;
+      FazzaPilotCompletionProvider.debounceTimeout = setTimeout(async () => {
+        FazzaPilotCompletionProvider.debouncing = false;
       }, options.debounceDelay);
     }
 

@@ -1,11 +1,11 @@
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
-import { SerializedContinueConfig } from "..";
+import { SerializedFazzaPilotConfig } from "..";
 import defaultConfig from "../config/default";
 import Types from "../config/types";
 
-export function getContinueGlobalPath(): string {
+export function getFazzaPilotGlobalPath(): string {
   // This is ~/.continue on mac/linux
   const continuePath = path.join(os.homedir(), ".continue");
   if (!fs.existsSync(continuePath)) {
@@ -15,7 +15,7 @@ export function getContinueGlobalPath(): string {
 }
 
 export function getSessionsFolderPath(): string {
-  const sessionsPath = path.join(getContinueGlobalPath(), "sessions");
+  const sessionsPath = path.join(getFazzaPilotGlobalPath(), "sessions");
   if (!fs.existsSync(sessionsPath)) {
     fs.mkdirSync(sessionsPath);
   }
@@ -23,7 +23,7 @@ export function getSessionsFolderPath(): string {
 }
 
 export function getIndexFolderPath(): string {
-  const indexPath = path.join(getContinueGlobalPath(), "index");
+  const indexPath = path.join(getFazzaPilotGlobalPath(), "index");
   if (!fs.existsSync(indexPath)) {
     fs.mkdirSync(indexPath);
   }
@@ -43,7 +43,7 @@ export function getSessionsListPath(): string {
 }
 
 export function getConfigJsonPath(): string {
-  const p = path.join(getContinueGlobalPath(), "config.json");
+  const p = path.join(getFazzaPilotGlobalPath(), "config.json");
   if (!fs.existsSync(p)) {
     fs.writeFileSync(p, JSON.stringify(defaultConfig, null, 2));
   }
@@ -51,7 +51,7 @@ export function getConfigJsonPath(): string {
 }
 
 export function getConfigTsPath(): string {
-  const p = path.join(getContinueGlobalPath(), "config.ts");
+  const p = path.join(getFazzaPilotGlobalPath(), "config.ts");
   if (!fs.existsSync(p)) {
     fs.writeFileSync(
       p,
@@ -61,7 +61,7 @@ export function getConfigTsPath(): string {
     );
   }
 
-  const typesPath = path.join(getContinueGlobalPath(), "types");
+  const typesPath = path.join(getFazzaPilotGlobalPath(), "types");
   if (!fs.existsSync(typesPath)) {
     fs.mkdirSync(typesPath);
   }
@@ -69,14 +69,14 @@ export function getConfigTsPath(): string {
   if (!fs.existsSync(corePath)) {
     fs.mkdirSync(corePath);
   }
-  const packageJsonPath = path.join(getContinueGlobalPath(), "package.json");
+  const packageJsonPath = path.join(getFazzaPilotGlobalPath(), "package.json");
   if (!fs.existsSync(packageJsonPath)) {
     fs.writeFileSync(
       packageJsonPath,
       JSON.stringify({
         name: "continue-config",
         version: "1.0.0",
-        description: "My Continue Configuration",
+        description: "My FazzaPilot Configuration",
         main: "config.js",
       })
     );
@@ -89,14 +89,14 @@ export function getConfigTsPath(): string {
 export function getConfigJsPath(node: boolean): string {
   // Do not create automatically
   return path.join(
-    getContinueGlobalPath(),
+    getFazzaPilotGlobalPath(),
     "out",
     `config${node ? ".node" : ""}.js`
   );
 }
 
 export function getTsConfigPath(): string {
-  const tsConfigPath = path.join(getContinueGlobalPath(), "tsconfig.json");
+  const tsConfigPath = path.join(getFazzaPilotGlobalPath(), "tsconfig.json");
   if (!fs.existsSync(tsConfigPath)) {
     fs.writeFileSync(
       tsConfigPath,
@@ -130,7 +130,7 @@ export function getTsConfigPath(): string {
 }
 
 export function devDataPath(): string {
-  const sPath = path.join(getContinueGlobalPath(), "dev_data");
+  const sPath = path.join(getFazzaPilotGlobalPath(), "dev_data");
   if (!fs.existsSync(sPath)) {
     fs.mkdirSync(sPath);
   }
@@ -142,7 +142,7 @@ export function getDevDataFilePath(fileName: string): string {
 }
 
 export function editConfigJson(
-  callback: (config: SerializedContinueConfig) => SerializedContinueConfig
+  callback: (config: SerializedFazzaPilotConfig) => SerializedFazzaPilotConfig
 ) {
   const config = fs.readFileSync(getConfigJsonPath(), "utf8");
   let configJson = JSON.parse(config);
@@ -152,7 +152,7 @@ export function editConfigJson(
 }
 
 function getMigrationsFolderPath(): string {
-  const migrationsPath = path.join(getContinueGlobalPath(), ".migrations");
+  const migrationsPath = path.join(getFazzaPilotGlobalPath(), ".migrations");
   if (!fs.existsSync(migrationsPath)) {
     fs.mkdirSync(migrationsPath);
   }

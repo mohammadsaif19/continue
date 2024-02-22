@@ -1,5 +1,5 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { ContinueConfig } from "core";
+import { FazzaPilotConfig } from "core";
 import { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -95,8 +95,8 @@ const ConfigJsonButton = styled(Button)`
 const ALL_MODEL_ROLES = ["default", "summarize", "edit", "chat"];
 
 function Settings() {
-  const formMethods = useForm<ContinueConfig>();
-  const onSubmit = (data: ContinueConfig) => console.log(data);
+  const formMethods = useForm<FazzaPilotConfig>();
+  const onSubmit = (data: FazzaPilotConfig) => console.log(data);
 
   const navigate = useNavigate();
   const config = useSelector((state: RootStore) => state.state.config);

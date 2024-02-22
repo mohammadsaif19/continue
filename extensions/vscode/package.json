@@ -1,7 +1,7 @@
 {
   "name": "continue",
   "icon": "media/icon.png",
-  "version": "0.8.13",
+  "version": "0.8.14",
   "repository": {
     "type": "git",
     "url": "https://github.com/continuedev/continue"
@@ -17,10 +17,10 @@
   "homepage": "https://continue.dev",
   "qna": "https://github.com/continuedev/continue/issues/new/choose",
   "license": "Apache-2.0",
-  "displayName": "Continue - CodeLlama, GPT-4, and more",
+  "displayName": "FazzaPilot - CodeLlama, GPT-4, and more",
   "pricing": "Free",
   "description": "Open-source autopilot for software development - bring the power of ChatGPT to your IDE",
-  "publisher": "Continue",
+  "publisher": "FazzaPilot",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -50,141 +50,141 @@
   "browser": "./out/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Continue",
+      "title": "FazzaPilot",
       "properties": {
         "continue.telemetryEnabled": {
           "type": "boolean",
           "default": true,
-          "markdownDescription": "Continue collects anonymous usage data, cleaned of PII, to help us improve the product for our users. Read more  at [continue.dev › Telemetry](https://continue.dev/docs/telemetry)."
+          "markdownDescription": "FazzaPilot collects anonymous usage data, cleaned of PII, to help us improve the product for our users. Read more  at [continue.dev › Telemetry](https://continue.dev/docs/telemetry)."
         },
         "continue.showInlineTip": {
           "type": "boolean",
           "default": true,
-          "description": "Show inline suggestion to use the Continue keyboard shortcuts."
+          "description": "Show inline suggestion to use the FazzaPilot keyboard shortcuts."
         },
         "continue.enableTabAutocomplete": {
           "type": "boolean",
           "default": false,
-          "markdownDescription": "Enable Continue's experimental tab autocomplete feature (pre-release only). Read our walkthrough to learn about configuration and how to share feedback: [continue.dev › Walkthrough: Tab Autocomplete](https://continue.dev/docs/walkthroughs/tab-autocomplete)"
+          "markdownDescription": "Enable FazzaPilot's experimental tab autocomplete feature (pre-release only). Read our walkthrough to learn about configuration and how to share feedback: [continue.dev › Walkthrough: Tab Autocomplete](https://continue.dev/docs/walkthroughs/tab-autocomplete)"
         }
       }
     },
     "commands": [
       {
         "command": "continue.acceptDiff",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Accept Diff",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.rejectDiff",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Reject Diff",
-        "group": "Continue",
+        "group": "FazzaPilot",
         "icon": "$(stop)"
       },
       {
         "command": "continue.quickEdit",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Quick Edit",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.toggleAuxiliaryBar",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Toggle Right Sidebar",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
-        "command": "continue.focusContinueInput",
-        "category": "Continue",
+        "command": "continue.focusFazzaPilotInput",
+        "category": "FazzaPilot",
         "title": "Add Highlighted Code to Context",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
-        "command": "continue.focusContinueInputWithoutClear",
-        "category": "Continue",
+        "command": "continue.focusFazzaPilotInputWithoutClear",
+        "category": "FazzaPilot",
         "title": "Add Highlighted Code to Context",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.debugTerminal",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Debug Terminal",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.toggleFullScreen",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Toggle Full Screen",
         "icon": "$(fullscreen)",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.shareSession",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Share Session",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.selectFilesAsContext",
-        "category": "Continue",
-        "title": "Continue: Select Files as Context",
-        "group": "Continue"
+        "category": "FazzaPilot",
+        "title": "FazzaPilot: Select Files as Context",
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.newSession",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "New Session",
         "icon": "$(add)",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.viewHistory",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "View History",
         "icon": "$(history)",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.writeCommentsForCode",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Write Comments for this Code",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.writeDocstringForCode",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Write a Docstring for this Code",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.fixCode",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Fix this Code",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.optimizeCode",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Optimize this Code",
-        "group": "Continue"
+        "group": "FazzaPilot"
       },
       {
         "command": "continue.fixGrammar",
-        "category": "Continue",
+        "category": "FazzaPilot",
         "title": "Fix Grammar / Spelling",
-        "group": "Continue"
+        "group": "FazzaPilot"
       }
     ],
     "keybindings": [
       {
-        "command": "continue.focusContinueInput",
+        "command": "continue.focusFazzaPilotInput",
         "mac": "cmd+m",
         "key": "ctrl+m"
       },
       {
-        "command": "continue.focusContinueInputWithoutClear",
+        "command": "continue.focusFazzaPilotInputWithoutClear",
         "mac": "cmd+shift+m",
         "key": "ctrl+shift+m"
       },
@@ -229,7 +229,7 @@
     "submenus": [
       {
         "id": "continue.continueSubMenu",
-        "label": "Continue"
+        "label": "FazzaPilot"
       }
     ],
     "menus": {
@@ -241,10 +241,10 @@
           "command": "continue.toggleAuxiliaryBar"
         },
         {
-          "command": "continue.focusContinueInput"
+          "command": "continue.focusFazzaPilotInput"
         },
         {
-          "command": "continue.focusContinueInputWithoutClear"
+          "command": "continue.focusFazzaPilotInputWithoutClear"
         },
         {
           "command": "continue.debugTerminal"
@@ -271,39 +271,39 @@
       "editor/title/run": [
         {
           "command": "continue.rejectDiff",
-          "group": "Continue",
+          "group": "FazzaPilot",
           "when": "continue.streamingDiff"
         }
       ],
       "continue.continueSubMenu": [
         {
-          "command": "continue.focusContinueInputWithoutClear",
-          "group": "Continue",
+          "command": "continue.focusFazzaPilotInputWithoutClear",
+          "group": "FazzaPilot",
           "when": "editorHasSelection"
         },
         {
           "command": "continue.writeCommentsForCode",
-          "group": "Continue",
+          "group": "FazzaPilot",
           "when": "editorHasSelection"
         },
         {
           "command": "continue.writeDocstringForCode",
-          "group": "Continue",
+          "group": "FazzaPilot",
           "when": "editorHasSelection"
         },
         {
           "command": "continue.fixCode",
-          "group": "Continue",
+          "group": "FazzaPilot",
           "when": "editorHasSelection"
         },
         {
           "command": "continue.optimizeCode",
-          "group": "Continue",
+          "group": "FazzaPilot",
           "when": "editorHasSelection"
         },
         {
           "command": "continue.fixGrammar",
-          "group": "Continue",
+          "group": "FazzaPilot",
           "when": "editorHasSelection && editorLangId == 'markdown'"
         }
       ],
@@ -342,8 +342,8 @@
       "activitybar": [
         {
           "id": "continue",
-          "title": "Continue",
-          "icon": "media/continue-dev-square.png"
+          "title": "FazzaPilot",
+          "icon": "media/logo.png"
         }
       ]
     },
@@ -361,12 +361,12 @@
       {
         "id": "continue",
         "title": "Getting Started",
-        "description": "Learn how to use Continue",
+        "description": "Learn how to use FazzaPilot",
         "steps": [
           {
             "id": "edit",
             "title": "Edit in natural language",
-            "description": "Highlight a section of code and instruct Continue to refactor it (e.g. `/edit rewrite this function to be async`)",
+            "description": "Highlight a section of code and instruct FazzaPilot to refactor it (e.g. `/edit rewrite this function to be async`)",
             "media": {
               "image": "media/edit.png",
               "altText": "Empty image"
@@ -376,7 +376,7 @@
           {
             "id": "explain",
             "title": "Get possible explanations",
-            "description": "Ask Continue about a part of your code to get another perspective (e.g. `where in the page should I be making this request to the backend?`)",
+            "description": "Ask FazzaPilot about a part of your code to get another perspective (e.g. `where in the page should I be making this request to the backend?`)",
             "media": {
               "image": "media/explain.png",
               "altText": "Empty image"
@@ -386,7 +386,7 @@
           {
             "id": "generate",
             "title": "Generate files from scratch",
-            "description": "Let Continue build the scaffolding of Python scripts, React components, and more (e.g. `/edit here is a connector for postgres, now write one for kafka`)",
+            "description": "Let FazzaPilot build the scaffolding of Python scripts, React components, and more (e.g. `/edit here is a connector for postgres, now write one for kafka`)",
             "media": {
               "image": "media/generate.png",
               "altText": "Empty image"

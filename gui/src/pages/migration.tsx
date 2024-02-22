@@ -1,5 +1,5 @@
 import React from "react";
-import ContinueButton from "../components/mainInput/ContinueButton";
+import FazzaPilotButton from "../components/mainInput/ContinueButton";
 import { useNavigate } from "react-router-dom";
 
 function MigrationPage() {
@@ -11,7 +11,7 @@ function MigrationPage() {
       </h1>
 
       <p>
-        Continue now uses a .json config file. We hope that this takes the
+        FazzaPilot now uses a .json config file. We hope that this takes the
         guesswork out of setting up.
       </p>
 
@@ -35,7 +35,7 @@ function MigrationPage() {
         server, this message does not apply.
       </i>
 
-      <ContinueButton
+      <FazzaPilotButton
         showStop={false}
         onClick={() => {
           navigate("/");

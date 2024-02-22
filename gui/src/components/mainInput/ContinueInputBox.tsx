@@ -50,7 +50,7 @@ const GradientBorder = styled.div<{
   margin-top: 8px;
 `;
 
-interface ContinueInputBoxProps {
+interface FazzaPilotInputBoxProps {
   isLastUserInput: boolean;
   isMainInput?: boolean;
   onEnter: (editorState: JSONContent) => void;
@@ -59,7 +59,7 @@ interface ContinueInputBoxProps {
   contextItems?: ContextItemWithId[];
 }
 
-function ContinueInputBox(props: ContinueInputBoxProps) {
+function FazzaPilotInputBox(props: FazzaPilotInputBoxProps) {
   const dispatch = useDispatch();
 
   const active = useSelector((store: RootStore) => store.state.active);
@@ -125,4 +125,4 @@ function ContinueInputBox(props: ContinueInputBoxProps) {
   );
 }
 
-export default ContinueInputBox;
+export default FazzaPilotInputBox;

@@ -1,6 +1,6 @@
 # Tab Autocomplete (Experimental)
 
-Continue now provides experimental support for tab autocomplete in VS Code. You can enable it by downloading the pre-release version of the extension, opening VS Code settings, and then checking the box that says "Enable Tab Autocomplete". There is also a button on the bottom/status bar for fast access. We will be greatly improving the experience over the next few releases, and it is always helpful to hear feedback. If you have any problems or suggestions, please let us know in our [Discord](https://discord.gg/vapESyrFmJ).
+FazzaPilot now provides experimental support for tab autocomplete in VS Code. You can enable it by downloading the pre-release version of the extension, opening VS Code settings, and then checking the box that says "Enable Tab Autocomplete". There is also a button on the bottom/status bar for fast access. We will be greatly improving the experience over the next few releases, and it is always helpful to hear feedback. If you have any problems or suggestions, please let us know in our [Discord](https://discord.gg/vapESyrFmJ).
 
 ## Setting up with Ollama (default)
 
@@ -71,7 +71,7 @@ We are working on this! You can expect improvements in the time frame of the nex
 
 ### Completions don't know about my code
 
-We are working on this as well! Right now Continue only sees your current file surrounding the cursor. We're already partway through building a full-text search feature that will help Continue know about other files. You can expect to see improvements in the time frame of roughly a week.
+We are working on this as well! Right now FazzaPilot only sees your current file surrounding the cursor. We're already partway through building a full-text search feature that will help FazzaPilot know about other files. You can expect to see improvements in the time frame of roughly a week.
 
 ### Completions contain formatting errors
 

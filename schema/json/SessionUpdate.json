@@ -35,8 +35,8 @@
         }
       }
     },
-    "ContinueError": {
-      "title": "ContinueError",
+    "FazzaPilotError": {
+      "title": "FazzaPilotError",
       "type": "object",
       "properties": {
         "title": {
@@ -48,10 +48,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "title",
-        "message"
-      ]
+      "required": ["title", "message"]
     },
     "SetStep": {
       "title": "SetStep",
@@ -82,7 +79,7 @@
           "type": "integer"
         },
         "error": {
-          "$ref": "#/definitions/ContinueError"
+          "$ref": "#/definitions/FazzaPilotError"
         },
         "observations": {
           "title": "Observations",
@@ -127,10 +124,7 @@
           "type": "boolean"
         }
       },
-      "required": [
-        "index",
-        "update"
-      ]
+      "required": ["index", "update"]
     }
   }
 }

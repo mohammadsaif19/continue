@@ -1,4 +1,4 @@
-import { ContinueConfig, ContinueRcJson, ILLM } from "core";
+import { FazzaPilotConfig, FazzaPilotRcJson, ILLM } from "core";
 import defaultConfig from "core/config/default";
 import {
   finalToBrowserConfig,
@@ -21,11 +21,11 @@ import { getUniqueId } from "./util/vscode";
 const tls = require("tls");
 
 const outputChannel = vscode.window.createOutputChannel(
-  "Continue - LLM Prompt/Completion"
+  "FazzaPilot - LLM Prompt/Completion"
 );
 
 class VsCodeConfigHandler {
-  savedConfig: ContinueConfig | undefined;
+  savedConfig: FazzaPilotConfig | undefined;
 
   reloadConfig() {
     this.savedConfig = undefined;
@@ -35,7 +35,7 @@ class VsCodeConfigHandler {
   private async _getWorkspaceConfigs() {
     const workspaceDirs =
       vscode.workspace.workspaceFolders?.map((folder) => folder.uri) || [];
-    const configs: ContinueRcJson[] = [];
+    const configs: FazzaPilotRcJson[] = [];
     for (const workspaceDir of workspaceDirs) {
       const files = await vscode.workspace.fs.readDirectory(workspaceDir);
       for (const [filename, type] of files) {
@@ -50,12 +50,12 @@ class VsCodeConfigHandler {
     return configs;
   }
 
-  async loadConfig(): Promise<ContinueConfig> {
+  async loadConfig(): Promise<FazzaPilotConfig> {
     try {
       if (this.savedConfig) {
         return this.savedConfig;
       }
-      let workspaceConfigs: ContinueRcJson[] = [];
+      let workspaceConfigs: FazzaPilotRcJson[] = [];
       try {
         workspaceConfigs = await this._getWorkspaceConfigs();
       } catch (e) {
@@ -264,7 +264,7 @@ export class TabAutocompleteModel {
       if (!TabAutocompleteModel.shownOllamaWarning) {
         vscode.window
           .showWarningMessage(
-            "Continue failed to connect to Ollama, which is used by default for tab-autocomplete. If you haven't downloaded it yet, you can do so at https://ollama.ai (recommended). If you'd like to use a custom model for tab autocomplete, learn more in the docs",
+            "FazzaPilot failed to connect to Ollama, which is used by default for tab-autocomplete. If you haven't downloaded it yet, you can do so at https://ollama.ai (recommended). If you'd like to use a custom model for tab autocomplete, learn more in the docs",
             "Documentation"
           )
           .then((value) => {

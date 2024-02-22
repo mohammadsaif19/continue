@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-import { ContinueSDK } from "..";
+import { FazzaPilotSDK } from "..";
 import EditSlashCommand, { getPromptParts } from "../commands/slash/edit";
 import { contextItemToRangeInFileWithContents } from "../commands/util";
 import FileSystemIde from "../ide/filesystem";
@@ -54,7 +54,7 @@ const TEST_CONTEXT_ITEM2 = {
 describe("/edit slash command", () => {
   test.only("doesn't break", async () => {
     const command = EditSlashCommand;
-    const sdk: ContinueSDK = {
+    const sdk: FazzaPilotSDK = {
       ide: new FileSystemIde(),
       // llm: new FreeTrial({ model: "gpt-3.5-turbo" }),
       llm: new Ollama({ model: "codellama-7b" }),

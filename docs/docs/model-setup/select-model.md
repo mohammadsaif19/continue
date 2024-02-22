@@ -6,7 +6,7 @@ keywords: [gpt-4, codellama, claude-2, wizardcoder, wizardcoder]
 
 # Select a Large Language Model
 
-Continue makes it easy to swap out different LLMs. You can either click the "+" button next to the model dropdown to configure in the GUI or manually add them to your `config.json`. Once you've done this, you will be able to switch between them in the model selection dropdown.
+FazzaPilot makes it easy to swap out different LLMs. You can either click the "+" button next to the model dropdown to configure in the GUI or manually add them to your `config.json`. Once you've done this, you will be able to switch between them in the model selection dropdown.
 
 **In addition to selecting a LLM, you will need to figure out [what model provider to use](./select-provider.md).**
 

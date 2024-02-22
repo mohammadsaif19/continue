@@ -9,10 +9,10 @@ import {
   ChatHistory,
   ContextItemWithId,
   ContextProviderDescription,
-  ContinueConfig,
+  FazzaPilotConfig,
   SlashCommandDescription,
 } from "core";
-import { BrowserSerializedContinueConfig } from "core/config/load";
+import { BrowserSerializedFazzaPilotConfig } from "core/config/load";
 import { createTransform, persistReducer, persistStore } from "redux-persist";
 import { createFilter } from "redux-persist-transform-filter";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
@@ -28,7 +28,7 @@ export interface RootStore {
     history: ChatHistory;
     contextItems: ContextItemWithId[];
     active: boolean;
-    config: BrowserSerializedContinueConfig;
+    config: BrowserSerializedFazzaPilotConfig;
     title: string;
     sessionId: string;
     defaultModelTitle: string;
@@ -53,7 +53,7 @@ export interface RootStore {
     meilisearchUrl: string | undefined;
     slashCommands: SlashCommandDescription[];
     selectedContextItems: any[];
-    config: ContinueConfig;
+    config: FazzaPilotConfig;
     contextProviders: ContextProviderDescription[];
     savedContextGroups: any[]; // TODO: Context groups
     indexingProgress: number;

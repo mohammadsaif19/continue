@@ -1,5 +1,5 @@
 import { Chunk, DiffLine, Problem } from "..";
-import { BrowserSerializedContinueConfig } from "../config/load";
+import { BrowserSerializedFazzaPilotConfig } from "../config/load";
 import { IDE } from "../index";
 
 import { ideRequest } from "./messaging";
@@ -7,7 +7,7 @@ async function r(messageType: string, options: any = {}) {
   return await ideRequest(messageType, options);
 }
 export class ExtensionIde implements IDE {
-  async getSerializedConfig(): Promise<BrowserSerializedContinueConfig> {
+  async getSerializedConfig(): Promise<BrowserSerializedFazzaPilotConfig> {
     return await r("getSerializedConfig");
   }
 
@@ -41,11 +41,11 @@ export class ExtensionIde implements IDE {
 
   _continueDir: string | null = null;
 
-  async getContinueDir(): Promise<string> {
+  async getFazzaPilotDir(): Promise<string> {
     if (this._continueDir) {
       return this._continueDir;
     }
-    const dir = await r("getContinueDir");
+    const dir = await r("getFazzaPilotDir");
     this._continueDir = dir;
     return dir;
   }

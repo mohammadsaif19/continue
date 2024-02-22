@@ -198,36 +198,8 @@ const Layout = () => {
         <GridDiv>
           <Outlet />
           <DropdownPortalDiv id="model-select-top-div"></DropdownPortalDiv>
-          <Footer>
+          {/* <Footer>
             <div className="mr-auto flex gap-2 items-center">
-              {/* {localStorage.getItem("ide") === "jetbrains" ||
-                localStorage.getItem("hideFeature") === "true" || (
-                  <SparklesIcon
-                    className="cursor-pointer"
-                    onClick={() => {
-                      localStorage.setItem("hideFeature", "true");
-                    }}
-                    onMouseEnter={() => {
-                      dispatch(
-                        setBottomMessage(
-                          `🎁 New Feature: Use ${getMetaKeyLabel()}⇧R automatically debug errors in the terminal (you can click the sparkle icon to make it go away)`
-                        )
-                      );
-                    }}
-                    onMouseLeave={() => {
-                      dispatch(
-                        setBottomMessageCloseTimeout(
-                          setTimeout(() => {
-                            dispatch(setBottomMessage(undefined));
-                          }, 2000)
-                        )
-                      );
-                    }}
-                    width="1.3em"
-                    height="1.3em"
-                    color="yellow"
-                  />
-                )} */}
               <ModelSelect />
               {indexingProgress >= 1 && // Would take up too much space together with indexing progress
                 defaultModel?.provider === "free-trial" &&
@@ -265,7 +237,7 @@ const Layout = () => {
             >
               <Cog6ToothIcon width="1.4em" height="1.4em" />
             </HeaderButtonWithText>
-          </Footer>
+          </Footer> */}
         </GridDiv>
 
         <BottomMessageDiv

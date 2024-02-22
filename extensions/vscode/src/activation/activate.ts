@@ -6,11 +6,11 @@ import { v4 } from "uuid";
 import * as vscode from "vscode";
 import { registerAllCommands } from "../commands";
 import IdeProtocolClient from "../continueIdeClient";
-import { ContinueGUIWebviewViewProvider } from "../debugPanel";
+import { FazzaPilotGUIWebviewViewProvider } from "../debugPanel";
 import registerQuickFixProvider from "../lang-server/codeActions";
 import { registerAllCodeLensProviders } from "../lang-server/codeLens";
 import {
-  ContinueCompletionProvider,
+  FazzaPilotCompletionProvider,
   setupStatusBar,
 } from "../lang-server/completionProvider";
 import { vsCodeIndexCodebase } from "../util/indexCodebase";
@@ -61,7 +61,7 @@ function showRefactorMigrationMessage() {
   ) {
     vscode.window
       .showInformationMessage(
-        "The Continue server protocol was recently updated in a way that requires the latest server version to work properly. Since you are manually running the server, please be sure to upgrade with `pip install --upgrade continuedev`.",
+        "The FazzaPilot server protocol was recently updated in a way that requires the latest server version to work properly. Since you are manually running the server, please be sure to upgrade with `pip install --upgrade continuedev`.",
         "Got it",
         "Don't show again"
       )
@@ -87,11 +87,12 @@ export async function activateExtension(context: vscode.ExtensionContext) {
   registerAllCodeLensProviders(context);
   registerAllCommands(context);
   registerQuickFixProvider();
-  await openTutorialFirstTime(context);
+  // await openTutorialFirstTime(context);
   setupInlineTips(context);
   showRefactorMigrationMessage();
   const config = vscode.workspace.getConfiguration("continue");
   const enabled = config.get<boolean>("enableTabAutocomplete");
+  console.log("Tab autocomplete enabled: ", enabled);
 
   // Register inline completion provider (odd versions are pre-release)
   if (parseInt(context.extension.packageJSON.version.split(".")[1]) % 2 !== 0) {
@@ -99,15 +100,15 @@ export async function activateExtension(context: vscode.ExtensionContext) {
     context.subscriptions.push(
       vscode.languages.registerInlineCompletionItemProvider(
         [{ pattern: "**" }],
-        new ContinueCompletionProvider()
+        new FazzaPilotCompletionProvider()
       )
     );
   }
 
   ideProtocolClient = new IdeProtocolClient(context);
 
-  // Register Continue GUI as sidebar webview, and beginning a new session
-  const provider = new ContinueGUIWebviewViewProvider();
+  // Register FazzaPilot GUI as sidebar webview, and beginning a new session
+  const provider = new FazzaPilotGUIWebviewViewProvider();
 
   context.subscriptions.push(
     vscode.window.registerWebviewViewProvider(
@@ -149,7 +150,7 @@ export async function activateExtension(context: vscode.ExtensionContext) {
   //   });
   // })();
 
-  // Load Continue configuration
+  // Load FazzaPilot configuration
   if (!context.globalState.get("hasBeenInstalled")) {
     context.globalState.update("hasBeenInstalled", true);
     Telemetry.capture("install", {

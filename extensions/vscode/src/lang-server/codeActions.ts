@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-class ContinueQuickFixProvider implements vscode.CodeActionProvider {
+class FazzaPilotQuickFixProvider implements vscode.CodeActionProvider {
   public static readonly providedCodeActionKinds = [
     vscode.CodeActionKind.QuickFix,
   ];
@@ -18,7 +18,7 @@ class ContinueQuickFixProvider implements vscode.CodeActionProvider {
     const createQuickFix = (edit: boolean) => {
       const diagnostic = context.diagnostics[0];
       const quickFix = new vscode.CodeAction(
-        edit ? "Fix with Continue" : "Ask Continue",
+        edit ? "Fix with FazzaPilot" : "Ask FazzaPilot",
         vscode.CodeActionKind.QuickFix
       );
       quickFix.isPreferred = false;
@@ -30,7 +30,7 @@ class ContinueQuickFixProvider implements vscode.CodeActionProvider {
       );
       quickFix.command = {
         command: "continue.quickFix",
-        title: "Continue Quick Fix",
+        title: "FazzaPilot Quick Fix",
         arguments: [
           diagnostic.message,
           document.getText(surroundingRange),
@@ -50,9 +50,10 @@ export default function registerQuickFixProvider() {
   // In your extension's activate function:
   vscode.languages.registerCodeActionsProvider(
     { language: "*" },
-    new ContinueQuickFixProvider(),
+    new FazzaPilotQuickFixProvider(),
     {
-      providedCodeActionKinds: ContinueQuickFixProvider.providedCodeActionKinds,
+      providedCodeActionKinds:
+        FazzaPilotQuickFixProvider.providedCodeActionKinds,
     }
   );
 }

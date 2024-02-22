@@ -155,7 +155,7 @@ declare global {
     replacement: string;
   }
   
-  export interface ContinueError {
+  export interface FazzaPilotError {
     title: string;
     message: string;
   }
@@ -288,7 +288,7 @@ declare global {
   }
   
   export interface IDE {
-    getSerializedConfig(): Promise<SerializedContinueConfig>;
+    getSerializedConfig(): Promise<SerializedFazzaPilotConfig>;
     getConfigJsUrl(): Promise<string | undefined>;
     getDiff(): Promise<string>;
     getTerminalContents(): Promise<string>;
@@ -297,7 +297,7 @@ declare global {
     getWorkspaceDirs(): Promise<string[]>;
     writeFile(path: string, contents: string): Promise<void>;
     showVirtualFile(title: string, contents: string): Promise<void>;
-    getContinueDir(): Promise<string>;
+    getFazzaPilotDir(): Promise<string>;
     openFile(path: string): Promise<void>;
     runCommand(command: string): Promise<void>;
     saveFile(filepath: string): Promise<void>;
@@ -338,7 +338,7 @@ declare global {
   
   // Slash Commands
   
-  export interface ContinueSDK {
+  export interface FazzaPilotSDK {
     ide: IDE;
     llm: ILLM;
     addContextItem: (item: ContextItemWithId) => void;
@@ -352,7 +352,7 @@ declare global {
     name: string;
     description: string;
     params?: { [key: string]: any };
-    run: (sdk: ContinueSDK) => AsyncGenerator<string | undefined>;
+    run: (sdk: FazzaPilotSDK) => AsyncGenerator<string | undefined>;
   
     // If true, this command will be run in NodeJs and have access to the filesystem and other Node-only APIs
     // You must make sure to dynamically import any Node-only dependencies in your command so that it doesn't break in the browser
@@ -532,7 +532,7 @@ declare global {
     embed(chunks: string[]): Promise<number[][]>;
   }
   
-  export interface SerializedContinueConfig {
+  export interface SerializedFazzaPilotConfig {
     allowAnonymousTelemetry?: boolean;
     models: ModelDescription[];
     systemMessage?: string;
@@ -547,11 +547,11 @@ declare global {
   }
   
   export interface Config {
-    /** If set to true, Continue will collect anonymous usage data to improve the product. If set to false, we will collect nothing. Read here to learn more: https://continue.dev/docs/telemetry */
+    /** If set to true, FazzaPilot will collect anonymous usage data to improve the product. If set to false, we will collect nothing. Read here to learn more: https://continue.dev/docs/telemetry */
     allowAnonymousTelemetry?: boolean;
     /** Each entry in this array will originally be a ModelDescription, the same object from your config.json, but you may add CustomLLMs.
      * A CustomLLM requires you only to define an AsyncGenerator that calls the LLM and yields string updates. You can choose to define either \`streamCompletion\` or \`streamChat\` (or both).
-     * Continue will do the rest of the work to construct prompt templates, handle context items, prune context, etc.
+     * FazzaPilot will do the rest of the work to construct prompt templates, handle context items, prune context, etc.
      */
     models: (CustomLLM | ModelDescription)[];
     /** A system message to be followed by all of your models */
@@ -561,20 +561,20 @@ declare global {
     /** The list of slash commands that will be available in the sidebar */
     slashCommands?: SlashCommand[];
     /** Each entry in this array will originally be a ContextProviderWithParams, the same object from your config.json, but you may add CustomContextProviders.
-     * A CustomContextProvider requires you only to define a title and getContextItems function. When you type '@title <query>', Continue will call \`getContextItems(query)\`.
+     * A CustomContextProvider requires you only to define a title and getContextItems function. When you type '@title <query>', FazzaPilot will call \`getContextItems(query)\`.
      */
     contextProviders?: (CustomContextProvider | ContextProviderWithParams)[];
-    /** If set to true, Continue will not index your codebase for retrieval */
+    /** If set to true, FazzaPilot will not index your codebase for retrieval */
     disableIndexing?: boolean;
-    /** If set to true, Continue will not make extra requests to the LLM to generate a summary title of each session. */
+    /** If set to true, FazzaPilot will not make extra requests to the LLM to generate a summary title of each session. */
     disableSessionTitles?: boolean;
-    /** An optional token to identify a user. Not used by Continue unless you write custom coniguration that requires such a token */
+    /** An optional token to identify a user. Not used by FazzaPilot unless you write custom coniguration that requires such a token */
     userToken?: string;
-    /** The provider used to calculate embeddings. If left empty, Continue will use transformers.js to calculate the embeddings with all-MiniLM-L6-v2 */
+    /** The provider used to calculate embeddings. If left empty, FazzaPilot will use transformers.js to calculate the embeddings with all-MiniLM-L6-v2 */
     embeddingsProvider?: EmbeddingsProviderDescription | EmbeddingsProvider;
   }
   
-  export interface ContinueConfig {
+  export interface FazzaPilotConfig {
     allowAnonymousTelemetry?: boolean;
     models: ILLM[];
     systemMessage?: string;

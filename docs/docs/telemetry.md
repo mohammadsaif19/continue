@@ -1,6 +1,6 @@
 ---
 title: 🦔 Telemetry
-description: Continue collects anonymous usage information
+description: FazzaPilot collects anonymous usage information
 keywords: [telemetry, anonymous, usage info, opt out]
 ---
 
@@ -8,7 +8,7 @@ keywords: [telemetry, anonymous, usage info, opt out]
 
 ## Overview
 
-Continue collects and reports **anonymous** usage information. This data is essential to understanding how we should improve the product. You can opt out of it at any time. We use [Posthog](https://posthog.com/), an open source platform for product analytics, to collect and store the data. You can review the code [here](https://github.com/continuedev/continue/blob/main/gui/src/hooks/CustomPostHogProvider.tsx).
+FazzaPilot collects and reports **anonymous** usage information. This data is essential to understanding how we should improve the product. You can opt out of it at any time. We use [Posthog](https://posthog.com/), an open source platform for product analytics, to collect and store the data. You can review the code [here](https://github.com/continuedev/continue/blob/main/gui/src/hooks/CustomPostHogProvider.tsx).
 
 ## What we track
 
@@ -32,4 +32,4 @@ The `~/.continue` directory contains a `config.json` file that looks like this:
 }
 ```
 
-You can turn off anonymous telemetry by changing the value of `allowAnonymousTelemetry` to `false`. Alternatively, you can uncheck the "Continue: Telemetry Enabled" box in VS Code settings.
+You can turn off anonymous telemetry by changing the value of `allowAnonymousTelemetry` to `false`. Alternatively, you can uncheck the "FazzaPilot: Telemetry Enabled" box in VS Code settings.

@@ -20,7 +20,7 @@ if (args[2] === "--target") {
   );
   // Modify and copy for .continuerc.json
   const schema = JSON.parse(fs.readFileSync("config_schema.json", "utf8"));
-  schema.definitions.SerializedContinueConfig.properties.mergeBehavior = {
+  schema.definitions.SerializedFazzaPilotConfig.properties.mergeBehavior = {
     type: "string",
     enum: ["merge", "overwrite"],
     default: "merge",
@@ -49,40 +49,40 @@ if (args[2] === "--target") {
   }
 
   // Copy over the dist folder to the Intellij extension //
-  const intellijExtensionWebviewPath = path.join(
-    "..",
-    "extensions",
-    "intellij",
-    "src",
-    "main",
-    "resources",
-    "webview"
-  );
+  // const intellijExtensionWebviewPath = path.join(
+  //   "..",
+  //   "extensions",
+  //   "intellij",
+  //   "src",
+  //   "main",
+  //   "resources",
+  //   "webview"
+  // );
 
-  const indexHtmlPath = path.join(intellijExtensionWebviewPath, "index.html");
-  fs.copyFileSync(indexHtmlPath, "tmp_index.html");
-  fs.rmSync(intellijExtensionWebviewPath, { recursive: true });
-  fs.mkdirSync(intellijExtensionWebviewPath, { recursive: true });
+  // const indexHtmlPath = path.join(intellijExtensionWebviewPath, "index.html");
+  // fs.copyFileSync(indexHtmlPath, "tmp_index.html");
+  // fs.rmSync(intellijExtensionWebviewPath, { recursive: true });
+  // fs.mkdirSync(intellijExtensionWebviewPath, { recursive: true });
 
-  await new Promise((resolve, reject) => {
-    ncp("dist", intellijExtensionWebviewPath, (error) => {
-      if (error) {
-        console.warn(
-          "[error] Error copying React app build to Intellij extension: ",
-          error
-        );
-        reject(error);
-      }
-      resolve();
-    });
-  });
+  // await new Promise((resolve, reject) => {
+  //   ncp("dist", intellijExtensionWebviewPath, (error) => {
+  //     if (error) {
+  //       console.warn(
+  //         "[error] Error copying React app build to Intellij extension: ",
+  //         error
+  //       );
+  //       reject(error);
+  //     }
+  //     resolve();
+  //   });
+  // });
 
-  if (fs.existsSync(indexHtmlPath)) {
-    fs.rmSync(indexHtmlPath, {});
-  }
-  fs.copyFileSync("tmp_index.html", indexHtmlPath);
-  fs.unlinkSync("tmp_index.html");
-  console.log("[info] Copied gui build to Intellij extension");
+  // if (fs.existsSync(indexHtmlPath)) {
+  //   fs.rmSync(indexHtmlPath, {});
+  // }
+  // fs.copyFileSync("tmp_index.html", indexHtmlPath);
+  // fs.unlinkSync("tmp_index.html");
+  // console.log("[info] Copied gui build to Intellij extension");
 
   // Then copy over the dist folder to the VSCode extension //
   const vscodeGuiPath = path.join("../extensions/vscode/gui");

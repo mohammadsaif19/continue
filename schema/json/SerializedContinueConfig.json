@@ -1,6 +1,6 @@
 {
-  "title": "SerializedContinueConfig",
-  "$ref": "#/definitions/continuedev__core__config__SerializedContinueConfig",
+  "title": "SerializedFazzaPilotConfig",
+  "$ref": "#/definitions/continuedev__core__config__SerializedFazzaPilotConfig",
   "definitions": {
     "BaseCompletionOptions": {
       "title": "BaseCompletionOptions",
@@ -368,8 +368,8 @@
         }
       }
     },
-    "continuedev__core__config__SerializedContinueConfig": {
-      "title": "SerializedContinueConfig",
+    "continuedev__core__config__SerializedFazzaPilotConfig": {
+      "title": "SerializedFazzaPilotConfig",
       "type": "object",
       "properties": {
         "disallowed_steps": {
@@ -506,13 +506,13 @@
         },
         "disable_summaries": {
           "title": "Disable Summaries",
-          "description": "If set to `True`, Continue will not generate summaries for each Step. This can be useful if you want to save on compute.",
+          "description": "If set to `True`, FazzaPilot will not generate summaries for each Step. This can be useful if you want to save on compute.",
           "default": false,
           "type": "boolean"
         },
         "disable_indexing": {
           "title": "Disable Indexing",
-          "description": "If set to `True`, Continue will not index the codebase. This is mainly used for debugging purposes.",
+          "description": "If set to `True`, FazzaPilot will not index the codebase. This is mainly used for debugging purposes.",
           "default": false,
           "type": "boolean"
         },
